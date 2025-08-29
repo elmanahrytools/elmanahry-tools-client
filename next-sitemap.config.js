@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.alexprogress.com",
+  siteUrl: "https://www.elmanahrytools.com",
   generateIndexSitemap: false, // 👈 disable sitemap index
   generateRobotsTxt: true,
 
