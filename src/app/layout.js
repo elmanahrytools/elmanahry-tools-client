@@ -24,16 +24,15 @@ const poppins = localFont({
 });
 
 export const metadata = {
-  title: "Alex Progress Trading",
-  description:
-    "Established in 1974, ALEXANDRIA PROGESS TRADING CO. is the leading tools & Equipment trading company in Egypt.",
+  title: "Elmanahry Tools",
+  description: "Elmanahry Tools, Coming Soon.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://www.alexprogress.com/" />
+        <link rel="canonical" href="https://www.elmanahrytools.com/" />
 
         {/* Google Site Verification */}
         <meta
