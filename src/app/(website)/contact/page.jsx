@@ -7,8 +7,8 @@ const Contact = ({}) => {
       <h1 className=" text-3xl md:text-4xl font-bold italic mb-5 animate-slide-in-top">
         Contact Us
       </h1>
-      <Section1 />
-      <Section2 />
+      {/* <Section1 />
+      <Section2 /> */}
     </div>
   );
 };
