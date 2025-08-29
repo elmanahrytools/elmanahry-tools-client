@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mainColor: #004cd0;
+  --secondColor: #f2293a;
+  --grayColor: #ebebeb;
+  --textColor: #17191c;
+  --fadeColor: #f9f9f9af;
+}
+
+/* Customize text selection color */
+::selection {
+  background-color: #a57f2d;
+  color: #f9f9f9;
+}
+
+/* For Chrome, Safari, Edge (WebKit-based browsers) */
+.customScrollbar::-webkit-scrollbar {
+  width: 6px; /* Set width of vertical scrollbar */
+  height: 6px; /* Set height of horizontal scrollbar */
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  border-radius: 8px; /* Rounded corners for the thumb */
+  background-color: #a57f2d; /* Thumb color */
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  background: #02517d; /* Background color of the track */
+}
+/* For Chrome, Safari, Edge (WebKit-based browsers) */
+.customScrollbarBox::-webkit-scrollbar {
+  width: 6px; /* Set width of vertical scrollbar */
+  height: 6px; /* Set height of horizontal scrollbar */
+}
+
+.customScrollbarBox::-webkit-scrollbar-thumb {
+  border-radius: 8px; /* Rounded corners for the thumb */
+  background-color: #a57f2d; /* Thumb color */
+}
+
+.customScrollbarBox::-webkit-scrollbar-track {
+  /* background: #02517d;
+  border-radius: 8px;  */
+}
+/* GLOBAL SCROLLBAR STYLES */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #a57f2d;
+}
+
+::-webkit-scrollbar-track {
+  background: #02517d;
+}
+
+body::-webkit-scrollbar {
+  width: 4px; /* Set width of vertical scrollbar */
+  height: 4px; /* Set height of horizontal scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px; /* Rounded corners for the thumb */
+  background-color: #a57f2d; /* Thumb color */
+}
+
+body::-webkit-scrollbar-track {
+  background: #02517d; /* Background color of the track */
+}
+
+body {
+  background: white;
+  color: blaxck;
+  @apply font-poppins;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
