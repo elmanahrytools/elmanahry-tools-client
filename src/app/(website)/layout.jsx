@@ -11,8 +11,8 @@ export default function WebsiteLayout({ children }) {
       {/* <h1 className="font-semibold text-2xl md:text-4xl text-grayColor text-center">
         Elmanahry Tools🚀
       </h1> */}
-      <Image src={"/elmanahry-tool.webp"} height={100} width={300} />
-      <p className="text-gray-800 text-center">
+      <Image src={"/elmanahry-tool.webp"} height={100} width={300} alt="logo" />
+      <p className="text-gray-800 text-center font-medium">
         Our website is coming soon. Stay tuned!
       </p>
     </div>
