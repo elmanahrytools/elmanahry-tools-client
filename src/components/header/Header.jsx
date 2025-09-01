@@ -16,7 +16,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-2 h-[70px]">
+    <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-2 h-[80px]">
       {isMobile ? (
         <Menu
           size={32}
@@ -28,10 +28,10 @@ const Header = () => {
       )}
       <div className="flex items-center cursor-pointer">
         <Image
-          src="/logo.png"
+          src="/elmanahry-logo.webp"
           alt="Logo"
-          width={55}
-          height={55}
+          width={160}
+          height={60}
           onClick={() => (window.location.href = "/")}
           priority
         />

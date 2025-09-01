@@ -34,30 +34,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="canonical" href="https://www.elmanahrytools.com/" />
 
-        {/* Google Site Verification */}
-        <meta
-          name="google-site-verification"
-          content="z6Nn1U2V_Y2NyxV3hNscu4Lurfr473fLRmzN-xL2F_k"
-        />
-
         {/* Favicon */}
-        <link rel="icon" href="/logo.png" type="image/png" />
-
-        {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-T6BRLJR072"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-T6BRLJR072');
-            `,
-          }}
-        />
+        <link rel="icon" href="/elmanahry.ico" type="image/x-icon" />
       </head>
       <body
         className={`${poppins.variable} flex flex-col min-h-screen overflow-x-hidden`}
