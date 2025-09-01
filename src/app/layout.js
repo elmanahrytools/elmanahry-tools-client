@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href="https://www.elmanahrytools.com/" />
 
         {/* Favicon */}
-        <link rel="icon" href="/elmanahry.ico" type="image/x-icon" />
+        <link rel="icon" href="/elmanahry.png" type="image/png" />
       </head>
       <body
         className={`${poppins.variable} flex flex-col min-h-screen overflow-x-hidden`}
