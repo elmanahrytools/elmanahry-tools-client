@@ -3,17 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --mainColor: #004cd0;
-  --secondColor: #f2293a;
-  --grayColor: #ebebeb;
-  --textColor: #17191c;
-  --fadeColor: #f9f9f9af;
+  --mainColor: #104270;
+  --yellowColor: #ffc138;
+  --blackColor: #414042;
+  --textColor: #414042;
+  --grayColor: #e6e7e8;
+  --redColor: #f2293a;
+}
+
+/* globals.css */
+
+/* keyframes: من grayscale+داكن إلى ملون+أوضح */
+@keyframes logoGlow {
+  0% {
+    filter: grayscale(100%) brightness(0.6);
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  50% {
+    filter: grayscale(0%) brightness(1.15);
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    filter: grayscale(100%) brightness(0.6);
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+}
+
+/* class to use on each logo */
+.logo-glow {
+  animation-name: logoGlow;
+  animation-duration: var(--logo-duration, 2.8s); /* قابل للتعديل */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, filter, opacity;
+  /* اجعل الصورة في حالة idle تبدو رمادية قليلًا */
+  filter: grayscale(100%) brightness(0.7);
+  opacity: 0.85;
+  transition: transform 200ms ease, filter 200ms ease, opacity 200ms ease;
+}
+
+/* يحترم users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .logo-glow {
+    animation: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Customize text selection color */
 ::selection {
-  background-color: #a57f2d;
-  color: #f9f9f9;
+  background-color: #414042;
+  color: #e6e7e8;
 }
 
 /* For Chrome, Safari, Edge (WebKit-based browsers) */
@@ -24,7 +69,7 @@
 
 .customScrollbar::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #a57f2d; /* Thumb color */
+  background-color: #104170; /* Thumb color */
 }
 
 .customScrollbar::-webkit-scrollbar-track {
@@ -38,7 +83,7 @@
 
 .customScrollbarBox::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #a57f2d; /* Thumb color */
+  background-color: #104170; /* Thumb color */
 }
 
 .customScrollbarBox::-webkit-scrollbar-track {
@@ -53,11 +98,35 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: #a57f2d;
+  background-color: #104170;
 }
 
 ::-webkit-scrollbar-track {
-  background: #02517d;
+  background: #104170;
+}
+
+/* globals.css */
+.hover\:shadow-custom:hover {
+  box-shadow: 0 0 20px 0 #414042; /* أحمر */
+}
+/* globals.css */
+.shadow-custom {
+  box-shadow: 0 0 10px 0 #414042; /* أحمر */
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeSlide {
+  animation: fadeSlide 0.4s ease-in-out;
 }
 
 body::-webkit-scrollbar {
@@ -67,16 +136,16 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #a57f2d; /* Thumb color */
+  background-color: #ffc138; /* Thumb color */
 }
 
 body::-webkit-scrollbar-track {
-  background: #02517d; /* Background color of the track */
+  background: #104270; /* Background color of the track */
 }
 
 body {
-  background: white;
-  color: blaxck;
+  background: #e6e7e8;
+  color: #414042;
   @apply font-poppins;
 }
 

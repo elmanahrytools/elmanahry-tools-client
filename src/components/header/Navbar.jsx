@@ -3,19 +3,20 @@
 import React from "react";
 import Link from "next/link";
 
-  const links = [
-    { title: "تواصل معنا", href: "/contact" },
-    { title: "عن الشركة", href: "/about" },
-  ];
+const links = [
+  { title: "المنتجات", href: "#" },
+  { title: "العلامات التجارية", href: "#" },
+  { title: "تواصل معنا", href: "#" },
+];
 
 function Navbar() {
   return (
     <nav className="hidden md:flex gap-8 items-center">
       {links.map((link) => (
         <Link
-          key={link.href}
+          key={link.title}
           href={link.href}
-          className="text-[17px] hover:text-mainColor transition-colors duration-300"
+          className="text-[18px] font-medium  text-mainColor transition-colors duration-300"
         >
           {link.title}
         </Link>

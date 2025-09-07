@@ -46,13 +46,12 @@ const TopArrow = ({ showAfterPx = 170, footerTriggerOffsetPx = 40 }) => {
 
   return (
     <div
-      className="hidden md:flex z-50 animate-slideLeft fixed bottom-5 md:right-6 cursor-pointer group"
+      className="hidden bg-yellowColor rounded-full w-11 h-11 md:flex items-center justify-center z-50 animate-slideLeft fixed bottom-5 md:right-6 cursor-pointer group"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Scroll to top"
     >
       <ArrowUpFromDot
-        color={inFooter ? "white" : "black"}
-        className={`ransition-transform duration-300 transform group-hover:translate-y-[-10px] `}
+        className={`ransition-transform duration-300 transform group-hover:translate-y-[-7px] text-mainColor`}
       />
     </div>
   );

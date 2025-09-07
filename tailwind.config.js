@@ -23,12 +23,21 @@ module.exports = {
       },
       colors: {
         mainColor: "var(--mainColor)",
-        secondColor: "var(--secondColor)",
+        yellowColor: "var(--yellowColor)",
+        blackColor: "var(--blackColor)",
         textColor: "var(--textColor)",
-        fadeColor: "var(--fadeColor)",
         grayColor: "var(--grayColor)",
+        redColor: "var(--redColor)",
       },
       keyframes: {
+        rotate12: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(35deg)" },
+        },
+        rotate360: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
         spin: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
@@ -94,6 +103,8 @@ module.exports = {
         },
       },
       animation: {
+        rotate12: "rotate12 2s infinite ease-in-out",
+        rotate360: "rotate360 1s linear infinite",
         "slide-in-top": "slide-in-top 0.5s  ease-in-out",
         spinSlow: "spin 0.5s linear infinite",
         rotateFlip: "rotateFlip 2s ease-in-out",

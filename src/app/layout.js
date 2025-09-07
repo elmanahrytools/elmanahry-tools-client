@@ -30,7 +30,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" dir="rtl">
       <head>
         <link rel="canonical" href="https://www.elmanahrytools.com/" />
 

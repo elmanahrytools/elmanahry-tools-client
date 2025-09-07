@@ -5,37 +5,38 @@ import { X } from "lucide-react";
 import Image from "next/image";
 function MobileNavbar({ onClose }) {
   const links = [
-    { title: "تواصل معنا", href: "/contact" },
-    { title: "عن الشركة", href: "/about" },
+    { title: "المنتجات", href: "#" },
+    { title: "العلامات التجارية", href: "#" },
+    { title: "تواصل معنا", href: "#" },
   ];
 
   return (
-    <div className="fixed animate-slideRight inset-0 z-50 bg-white flex flex-col">
+    <div className="fixed animate-slideRight inset-0 z-50 bg-mainColor flex flex-col">
       {/* Top bar with close button */}
-      <div className="flex justify-between h-[70px] items-center p-4 border-b border-gray-200">
-        <button onClick={onClose} className="text-gray-700">
-          <X size={32} />
-        </button>
+      <div className="flex justify-between bg-mainColor h-[70px] items-center p-4 border-b border-gray-200">
         <div className="flex items-center cursor-pointer">
           <Image
             src="/logo.png"
             alt="Logo"
-            width={55}
-            height={55}
+            width={110}
+            height={50}
             onClick={() => (window.location.href = "/")}
             priority
           />
         </div>
+        <button onClick={onClose} className="text-gray-700">
+          <X size={32} color="white" />
+        </button>
       </div>
 
       {/* Menu Links */}
       <div className="flex flex-col p-6 gap-4 overflow-y-auto h-[calc(100vh-64px)]">
         {links.map((link) => (
           <a
-            key={link.href}
+            key={link.title}
             href={link.href}
             onClick={onClose}
-            className="text-[20px] text-gray-800 hover:text-mainColor transition-colors duration-300"
+            className="text-[20px] text-grayColor hover:text-mainColor transition-colors duration-300"
           >
             {link.title}
           </a>

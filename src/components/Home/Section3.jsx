@@ -1,97 +1,68 @@
 "use client";
 
-import Image from "next/image";
-import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
+import { FaAward, FaUsers, FaBoxOpen, FaIndustry } from "react-icons/fa";
 
 const Section3 = () => {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
-
-  const icons = [
+  const stats = [
     {
-      icon: "/trust-icon.svg",
-      title: "Customers’ trust",
+      number: 10,
+      suffix: "+",
+      label: "سنوات خبرة",
+      icon: <FaAward size={40} />,
     },
     {
-      icon: "/growth-icon.svg",
-      title: "Business Integrity",
+      number: 5000,
+      suffix: "+",
+      label: "عميل سعيد",
+      icon: <FaUsers size={40} />,
     },
     {
-      icon: "/commitment-icon.svg",
-      title: "Reliable partnerships",
+      number: 2000,
+      suffix: "+",
+      label: "منتج متاح",
+      icon: <FaBoxOpen size={40} />,
     },
     {
-      icon: "/quality-icon.svg",
-      title: "Quality at the heart",
-    },
-    {
-      icon: "/innovation-icon.svg",
-      title: "ALEX Family",
+      number: 20,
+      suffix: "+",
+      label: "ماركات عالمية",
+      icon: <FaIndustry size={40} />,
     },
   ];
 
   return (
-    <div className="px-2 md:px-4 py-10 mx-auto max-w-7xl">
-      <div
-        ref={ref}
-        className={`bg-mainColor w-full rounded-[10px] px-10 py-4  shadow-md shadow-[#00000081]  ${
-          inView ? "animate-slideLeft" : "opacity-0"
-        }`}
-      >
-        <Image
-          src="/bronze-top-arrow.svg"
-          width={50}
-          height={77}
-          alt="Arrow"
-          className="mb-5"
-          unoptimized
-        />
-        <div className="flex gap-5">
-          <Image
-            src="/values-text.svg"
-            width={54}
-            height={1}
-            alt="Mission text"
-            className="max-h-[210px]"
-            unoptimized
-          />
-          <div className="flex flex-col w-full">
-            <h1 className="text-2xl font-semibold lg:text-left md:text-left text-center">
-              Our Values
-            </h1>
-            <div className="flex justify-center gap-5 md:justify-between lg:justify-between w-full flex-wrap lg:flex-nowrap md:flex-nowrap">
-              {icons.map((icon) => {
-                // Create a new useInView for each icon
-                const { ref: iconRef, inView: iconInView } = useInView({
-                  threshold: 0.2,
-                  triggerOnce: true,
-                });
+    <div className="relative  text-grayColor py-16 flex items-center justify-center">
+      {/* Red blur effect */}
 
-                return (
-                  <div
-                    key={icon.title}
-                    ref={iconRef} // Assign a unique ref for each icon
-                    className={`flex flex-col opacity-0 justify-center items-center group ${
-                      iconInView ? " animate-slideRightHome" : "opacity-0"
-                    }`}
-                  >
-                    <Image
-                      src={icon.icon}
-                      width={140}
-                      height={140}
-                      alt={icon.title}
-                      className="transition-transform duration-300 group-hover:scale-110"
-                      priority={true} // Prioritizes loading for immediate visibility
-                      loading="eager" // Forces eager loading instead of lazy loading
-                      unoptimized
-                    />
-                    <p className="transition-colors duration-300 group-hover:text-secondColor">
-                      {icon.title}
-                    </p>
-                  </div>
-                );
-              })}
+      <div className="max-w-7xl text-black mx-auto text-center px-2 md:px-4 text-textColor w-full">
+        <h2 className="text-3xl text-black md:text-5xl font-bold mb-2">
+          إنجازاتنا تتحدث عنا
+        </h2>
+        <p className="text-lg md:text-xl mb-16  max-w-3xl mx-auto text-black">
+          نفتخر بكوننا من الشركات الرائدة في مجال الأدوات والمعدات، حيث نسعى
+          دائمًا لتقديم أعلى جودة وخدمة لعملائنا الكرام في كل مكان.
+        </p>
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full">
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className=" group flex flex-col w-full bg-gradient-to-r from-mainColor to-[#1968b1] hover:from-[#cf920d] hover:to-yellowColor items-center  px-8 py-4 rounded-2xl backdrop-blur-sm 
+                          transform hover:-translate-y-3 hover:shadow-xl duration-300 transition-all"
+            >
+              <div className="mb-4 text-yellowColor group-hover:text-mainColor">
+                {stat.icon}
+              </div>
+              <span className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellowColor to-[#cf920d] group-hover:from-[#1968b1] group-hover:to-mainColor">
+                <CountUp end={stat.number} duration={3} />
+                {stat.suffix}
+              </span>
+              <p className="mt-3 text-lg text-grayColor group-hover:text-mainColor">
+                {stat.label}
+              </p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
