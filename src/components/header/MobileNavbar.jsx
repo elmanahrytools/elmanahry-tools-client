@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { X } from "lucide-react";
 import Image from "next/image";
 function MobileNavbar({ onClose }) {
@@ -9,6 +9,13 @@ function MobileNavbar({ onClose }) {
     { title: "العلامات التجارية", href: "#" },
     { title: "تواصل معنا", href: "#" },
   ];
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <div className="fixed animate-slideRight inset-0 z-50 bg-mainColor flex flex-col">
