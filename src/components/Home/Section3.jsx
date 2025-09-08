@@ -2,8 +2,9 @@
 
 import CountUp from "react-countup";
 import { FaAward, FaUsers, FaBoxOpen, FaIndustry } from "react-icons/fa";
-
+import { useInView } from "react-intersection-observer";
 const Section3 = () => {
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const stats = [
     {
       number: 10,
@@ -35,8 +36,15 @@ const Section3 = () => {
     <div className="relative  text-grayColor py-16 flex items-center justify-center">
       {/* Red blur effect */}
 
-      <div className="max-w-7xl text-black mx-auto text-center px-2 md:px-4 text-textColor w-full">
-        <h2 className="text-3xl text-black md:text-5xl font-bold mb-2">
+      <div
+        className={`max-w-7xl text-black mx-auto text-center px-2 md:px-4 text-textColor w-full ${
+          inView ? "animate-fadeSlide" : "opacity-0"
+        }`}
+      >
+        <h2
+          className="text-3xl text-black md:text-5xl font-bold mb-2"
+          ref={ref}
+        >
           إنجازاتنا تتحدث عنا
         </h2>
         <p className="text-lg md:text-xl mb-16  max-w-3xl mx-auto text-black">
@@ -44,7 +52,7 @@ const Section3 = () => {
           دائمًا لتقديم أعلى جودة وخدمة لعملائنا الكرام في كل مكان.
         </p>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full ">
           {stats.map((stat, i) => (
             <div
               key={i}

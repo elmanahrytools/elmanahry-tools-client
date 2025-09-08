@@ -51,15 +51,15 @@ const Header = () => {
         ) : (
           <Navbar />
         )}
-        <div className="items-center md:flex hidden gap-2">
+        <div className="items-center justify-center md:flex hidden gap-3">
           <div className="relative">
-            <PiShoppingCartLight color="#104270" size={31} />
+            <PiShoppingCartLight color="#104270" size={35} />
             <div className="absolute text-xs font-bold bg-mainColor text-grayColor rounded-full w-[25px] h-[25px] flex justify-center items-center top-[-10px] left-[25px]">
               33
             </div>
           </div>
 
-          <BsSearch className="rotate-90 " color="#104270" size={27} />
+          <BsSearch className="rotate-90 " color="#104270" size={30} />
         </div>
 
         {/* Mobile Nav Overlay */}

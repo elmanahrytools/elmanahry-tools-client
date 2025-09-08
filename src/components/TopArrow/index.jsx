@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpFromDot } from "lucide-react";
+import { RxDoubleArrowUp } from "react-icons/rx";
+
 const TopArrow = ({ showAfterPx = 170, footerTriggerOffsetPx = 40 }) => {
   const [show, setShow] = useState(false);
   const [inFooter, setInFooter] = useState(false);
@@ -50,7 +52,8 @@ const TopArrow = ({ showAfterPx = 170, footerTriggerOffsetPx = 40 }) => {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Scroll to top"
     >
-      <ArrowUpFromDot
+      <RxDoubleArrowUp
+        size={25}
         className={`ransition-transform duration-300 transform group-hover:translate-y-[-7px] text-mainColor`}
       />
     </div>

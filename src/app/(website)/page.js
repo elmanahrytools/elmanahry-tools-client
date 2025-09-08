@@ -9,7 +9,7 @@ import TopArrow from "@/components/TopArrow";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Section1 />
       <Section2 />
       <Section4 />

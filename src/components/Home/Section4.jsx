@@ -3,8 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
-
+import { useInView } from "react-intersection-observer";
 function Section4() {
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const tools = [
     { id: 1, name: "دريل كهربائي", price: "1500 ج.م", img: "/drill.png" },
     { id: 2, name: "شاكوش يدوي", price: "120 ج.م", img: "/hammer.png" },
@@ -14,14 +15,22 @@ function Section4() {
 
   return (
     <div className="py-10">
-      <div className="max-w-7xl mx-auto px-4">
+      <div ref={ref} className={`max-w-7xl mx-auto px-4 `}>
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">
-        الأكثر مبيعًا🔥
+        <h2
+          className={`text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 ${
+            inView ? "animate-fadeSlide" : "opacity-0"
+          }`}
+        >
+          الأكثر مبيعًا🔥
         </h2>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 ${
+            inView ? "animate-fadeSlide" : "opacity-0"
+          }`}
+        >
           {tools.map((tool) => (
             <div
               key={tool.id}
@@ -41,12 +50,8 @@ function Section4() {
 
               {/* Content */}
               <div className="p-5 text-center bg-yellowColor text-mainColor">
-                <h3 className="text-lg font-semibold ">
-                  {tool.name}
-                </h3>
-                <p className=" font-bold text-xl mt-2 ">
-                  {tool.price}
-                </p>
+                <h3 className="text-lg font-semibold ">{tool.name}</h3>
+                <p className=" font-bold text-xl mt-2 ">{tool.price}</p>
               </div>
 
               {/* Floating Button */}

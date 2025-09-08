@@ -3,8 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
-
+import { useInView } from "react-intersection-observer";
 function SectionDiscounts() {
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const tools = [
     {
       id: 1,
@@ -38,9 +39,16 @@ function SectionDiscounts() {
 
   return (
     <div className="pb-16 mt-5">
-      <div className="max-w-7xl mx-auto px-4">
+      <div
+        className={`max-w-7xl mx-auto px-4 ${
+          inView ? "animate-fadeSlide" : "opacity-0"
+        }`}
+      >
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">
+        <h2
+          ref={ref}
+          className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"
+        >
           عروض وخصومات خاصة💥
         </h2>
 

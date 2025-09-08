@@ -14,12 +14,14 @@ const Section5 = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   return (
     <div
-      ref={ref}
       className={`py-12 max-w-7xl px-4 mx-auto ${
         inView ? "animate-slideLeft" : "opacity-0"
       }`}
     >
-      <h2 className="text-center text-black text-2xl md:text-3xl font-bold mb-8">
+      <h2
+        ref={ref}
+        className="text-center text-black text-2xl md:text-3xl font-bold mb-8"
+      >
         شركاؤنا من الماركات العالمية🛠️
       </h2>
 
