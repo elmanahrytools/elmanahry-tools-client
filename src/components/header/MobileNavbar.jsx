@@ -43,7 +43,7 @@ function MobileNavbar({ onClose }) {
             key={link.title}
             href={link.href}
             onClick={onClose}
-            className="text-[20px] text-grayColor hover:text-mainColor transition-colors duration-300"
+            className="text-[20px] text-grayColor hover:text-yellowColor transition-colors duration-300"
           >
             {link.title}
           </a>
