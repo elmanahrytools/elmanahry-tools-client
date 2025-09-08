@@ -41,10 +41,7 @@ const Section3 = () => {
           inView ? "animate-fadeSlide" : "opacity-0"
         }`}
       >
-        <h2
-          className="text-3xl text-black md:text-5xl font-bold mb-2"
-          ref={ref}
-        >
+        <h2 className="text-3xl text-black md:text-5xl font-bold mb-2">
           إنجازاتنا تتحدث عنا
         </h2>
         <p className="text-lg md:text-xl mb-16  max-w-3xl mx-auto text-black">
@@ -52,7 +49,10 @@ const Section3 = () => {
           دائمًا لتقديم أعلى جودة وخدمة لعملائنا الكرام في كل مكان.
         </p>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full ">
+        <div
+          ref={ref}
+          className="flex  flex-col md:flex-row items-center justify-between gap-10 w-full "
+        >
           {stats.map((stat, i) => (
             <div
               key={i}
@@ -63,7 +63,8 @@ const Section3 = () => {
                 {stat.icon}
               </div>
               <span className="text-4xl numbers md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-yellowColor to-[#cf920d] group-hover:from-[#1968b1] group-hover:to-mainColor">
-                <CountUp end={stat.number} duration={3} />
+                {inView ? <CountUp end={stat.number} duration={3} /> : 0}
+
                 {stat.suffix}
               </span>
               <p className="mt-3 text-lg text-grayColor group-hover:text-mainColor">
