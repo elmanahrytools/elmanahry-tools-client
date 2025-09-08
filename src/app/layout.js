@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Providers from "@/store/providers";
+import CartInitializer from "@/components/CartInitializer";
 // Load Poppins font locally with multiple weights
 const poppins = localFont({
   src: [
@@ -40,7 +41,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} flex flex-col min-h-screen overflow-x-hidden`}
       >
-        <main className="min-h-full justify-center">{children}</main>
+        <Providers>
+          <CartInitializer>
+            <main className="min-h-full justify-center">{children}</main>
+          </CartInitializer>
+        </Providers>
       </body>
     </html>
   );

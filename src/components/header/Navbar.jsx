@@ -4,9 +4,10 @@ import React from "react";
 import Link from "next/link";
 
 const links = [
-  { title: "المنتجات", href: "#" },
-  { title: "العلامات التجارية", href: "#" },
-  { title: "تواصل معنا", href: "#" },
+  { title: "المنتجات", href: "/" },
+  { title: "العلامات التجارية", href: "/" },
+  { title: "تواصل معنا", href: "/contact" },
+  { title: "عن الشركة", href: "/about" },
 ];
 
 function Navbar() {
@@ -16,7 +17,7 @@ function Navbar() {
         <Link
           key={link.title}
           href={link.href}
-          className="text-[21px] font-bold hover:bg-[#4140421c] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
+          className="text-[19px] font-bold hover:bg-[#4140421c] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
         >
           {link.title}
         </Link>

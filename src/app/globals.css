@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "RussoOne";
   src: url("/fonts/RussoOne-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -10,7 +10,7 @@
   src: url("/fonts/Swissra-Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
-}
+} */
 @font-face {
   font-family: "Quicksand";
   src: url("/fonts/Quicksand-Regular.ttf") format("truetype");
@@ -169,7 +169,7 @@ body::-webkit-scrollbar-track {
 }
 
 body {
-  font-family: "RussoOne", sans-serif;
+  font-family: "Quicksand", sans-serif;
   background: #e6e7e8;
   color: #414042;
 }

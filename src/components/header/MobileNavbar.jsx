@@ -5,11 +5,11 @@ import { X } from "lucide-react";
 import Image from "next/image";
 function MobileNavbar({ onClose }) {
   const links = [
-    { title: "المنتجات", href: "#" },
-    { title: "العلامات التجارية", href: "#" },
-    { title: "تواصل معنا", href: "#" },
+    { title: "المنتجات", href: "/" },
+    { title: "العلامات التجارية", href: "/" },
+    { title: "تواصل معنا", href: "/contact" },
+    { title: "عن الشركة", href: "/about" },
   ];
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {

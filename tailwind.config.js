@@ -122,7 +122,7 @@ module.exports = {
         slideLeftDelay2: "slideLeft 0.3s 0.2s forwards",
         slideLeftDelay3: "slideLeft 1s 0.3s forwards",
         slideRightHome: "slideRightHome 1s forwards",
-        fadeIn: "fadeIn 0.4s 0.4s forwards",
+        fadeIn: "fadeIn 0.4s  forwards",
         fadeInAdmin: "fadeIn 1s forwards",
         fadeInDropDown: "fadeIn 0.4s forwards",
         slideLeftSector1: "slideLeft 0.6s forwards",
@@ -135,9 +135,9 @@ module.exports = {
         slideLeftAbout3: "slideLeft 1s forwards",
       },
       fontFamily: {
-        russo: ["RussoOne", "sans-serif"],
-        swissra: ["Swissra", "sans-serif"],
-        quicksand: ["Quicksand", "sans-serif"], // 👈 هنا
+        // russo: ["RussoOne", "sans-serif"],
+        // swissra: ["Swissra", "sans-serif"],
+        // quicksand: ["Quicksand", "sans-serif"],
       },
     },
   },
