@@ -35,12 +35,12 @@ const Header = () => {
         {isMobile ? (
           <div className="flex items-center gap-3">
             <div className="relative">
-              <PiShoppingCartLight color="#104270" size={30} />
+              <PiShoppingCartLight color="#104270" size={32} />
               <div className="absolute numbers text-xs font-bold bg-mainColor text-grayColor rounded-full w-[25px] h-[25px] flex justify-center items-center top-[-10px] left-[25px]">
                 33
               </div>
             </div>
-            <BsSearch className="rotate-90" color="#104270" size={25} />
+            <BsSearch className="rotate-90" color="#104270" size={26} />
             <Menu
               size={32}
               onClick={() => setIsMobileOpen(true)}
