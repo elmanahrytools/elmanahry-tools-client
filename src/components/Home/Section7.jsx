@@ -51,10 +51,10 @@ function Section7() {
 
               {/* Content */}
               <div className="p-2 flex flex-col items-center text-center">
-                <h3 className="text-md font-semibold text-white">
+                <h3 className="text-lg font-semibold text-grayColor">
                   {cat.label}
                 </h3>
-                <p className="text-md font-bold text-white  numbers">
+                <p className="text-lg font-bold text-yellowColor  numbers">
                   {cat.price}
                 </p>
               </div>

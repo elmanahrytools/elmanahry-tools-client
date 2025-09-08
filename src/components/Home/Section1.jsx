@@ -7,9 +7,9 @@ const Section1 = () => {
   return (
     <div
       id="hero"
-      className="relative md:h-[calc(100vh-70px)] 2xl:h-auto flex justify-center items-center bg-gradient-to-r from-mainColor to-mainColor overflow-hidden"
+      className="relative md:h-[calc(100vh-70px)] 2xl:h-auto flex justify-center items-center bg-mainColor overflow-hidden"
     >
-      <div className="flex flex-col md:flex-row max-w-7xl md:px-4 px-2 py-16 md:py-6 w-full justify-center md:justify-evenly gap-6 md:gap-40 items-center">
+      <div className="flex flex-col md:flex-row max-w-7xl md:px-4 px-2 py-16 md:py-6 w-full bg-mainColor justify-center md:justify-evenly gap-6 md:gap-40 items-center">
         {/* Right */}
         <div
           dir="rtl"
@@ -18,9 +18,7 @@ const Section1 = () => {
           <h1 className=" text-5xl md:text-6xl mb-4 font-bold">
             المناهري تولز
           </h1>
-          <h2 className="text-2xl font-semibold">
-            كل أدواتك في مكان واحد
-          </h2>
+          <h2 className="text-2xl font-semibold">كل أدواتك في مكان واحد</h2>
           <p className="text-lg">
             أفضل الأدوات اليدوية والكهربائية من أشهر العلامات التجارية
           </p>

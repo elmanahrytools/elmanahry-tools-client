@@ -78,14 +78,14 @@ function SectionDiscounts() {
 
               {/* Content */}
               <div className="p-5 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-gray-800">
                   {tool.name}
                 </h3>
                 <div className="mt-3">
-                  <p className="text-sm text-gray-400 line-through numbers">
+                  <p className="text-md text-gray-400 line-through numbers">
                     {tool.oldPrice}
                   </p>
-                  <p className="font-bold text-xl text-redColor numbers">
+                  <p className="font-bold text-2xl text-redColor numbers">
                     {tool.newPrice}
                   </p>
                 </div>
