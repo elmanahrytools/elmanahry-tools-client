@@ -16,7 +16,7 @@ function Navbar() {
         <Link
           key={link.title}
           href={link.href}
-          className="text-[18px] font-medium hover:bg-[#4140421c] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
+          className="text-[21px] font-bold hover:bg-[#4140421c] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
         >
           {link.title}
         </Link>

@@ -82,10 +82,10 @@ function SectionDiscounts() {
                   {tool.name}
                 </h3>
                 <div className="mt-3">
-                  <p className="text-sm text-gray-400 line-through">
+                  <p className="text-sm text-gray-400 line-through numbers">
                     {tool.oldPrice}
                   </p>
-                  <p className="font-bold text-xl text-redColor">
+                  <p className="font-bold text-xl text-redColor numbers">
                     {tool.newPrice}
                   </p>
                 </div>

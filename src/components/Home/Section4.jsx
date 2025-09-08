@@ -51,7 +51,7 @@ function Section4() {
               {/* Content */}
               <div className="p-5 text-center bg-yellowColor text-mainColor">
                 <h3 className="text-lg font-semibold ">{tool.name}</h3>
-                <p className=" font-bold text-xl mt-2 ">{tool.price}</p>
+                <p className="text-xl mt-2 numbers">{tool.price}</p>
               </div>
 
               {/* Floating Button */}

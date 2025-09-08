@@ -15,8 +15,12 @@ const Section1 = () => {
           dir="rtl"
           className="flex animate-slideLeft flex-col text-center md:text-start items-center md:items-start text-grayColor max-w-lg"
         >
-          <h1 className="font-semibold text-5xl mb-4 t">المناهري تولز</h1>
-          <h2 className="text-2xl font-medium mb-1">كل أدواتك في مكان واحد</h2>
+          <h1 className=" text-5xl md:text-6xl mb-4 font-bold">
+            المناهري تولز
+          </h1>
+          <h2 className="text-2xl font-semibold mb-1">
+            كل أدواتك في مكان واحد
+          </h2>
           <p className="text-lg">
             أفضل الأدوات اليدوية والكهربائية من أشهر العلامات التجارية
           </p>

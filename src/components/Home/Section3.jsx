@@ -62,7 +62,7 @@ const Section3 = () => {
               <div className="mb-4 text-yellowColor group-hover:text-mainColor">
                 {stat.icon}
               </div>
-              <span className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellowColor to-[#cf920d] group-hover:from-[#1968b1] group-hover:to-mainColor">
+              <span className="text-4xl numbers md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-yellowColor to-[#cf920d] group-hover:from-[#1968b1] group-hover:to-mainColor">
                 <CountUp end={stat.number} duration={3} />
                 {stat.suffix}
               </span>

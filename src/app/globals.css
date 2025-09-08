@@ -1,9 +1,29 @@
+@font-face {
+  font-family: "RussoOne";
+  src: url("/fonts/RussoOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Swissra";
+  src: url("/fonts/Swissra-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --mainColor: #104270;
+  --mainColor: hsl(209, 75%, 25%);
   --yellowColor: #ffc138;
   --blackColor: #414042;
   --textColor: #414042;
@@ -12,6 +32,11 @@
 }
 
 /* globals.css */
+
+.numbers {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
 
 /* keyframes: من grayscale+داكن إلى ملون+أوضح */
 @keyframes logoGlow {
@@ -144,9 +169,9 @@ body::-webkit-scrollbar-track {
 }
 
 body {
+  font-family: "RussoOne", sans-serif;
   background: #e6e7e8;
   color: #414042;
-  @apply font-poppins;
 }
 
 @layer utilities {

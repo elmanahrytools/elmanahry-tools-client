@@ -51,10 +51,12 @@ function Section7() {
 
               {/* Content */}
               <div className="p-2 flex flex-col items-center text-center">
-                <h3 className="text-sm font-semibold text-white">
+                <h3 className="text-md font-semibold text-white">
                   {cat.label}
                 </h3>
-                <p className="text-sm font-bold text-white mt-1">{cat.price}</p>
+                <p className="text-md font-bold text-white  numbers">
+                  {cat.price}
+                </p>
               </div>
 
               {/* Floating Cart Button */}

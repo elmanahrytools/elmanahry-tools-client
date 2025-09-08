@@ -36,7 +36,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <div className="relative">
               <PiShoppingCartLight color="#104270" size={30} />
-              <div className="absolute text-xs font-bold bg-mainColor text-grayColor rounded-full w-[25px] h-[25px] flex justify-center items-center top-[-10px] left-[25px]">
+              <div className="absolute numbers text-xs font-bold bg-mainColor text-grayColor rounded-full w-[25px] h-[25px] flex justify-center items-center top-[-10px] left-[25px]">
                 33
               </div>
             </div>
@@ -54,7 +54,7 @@ const Header = () => {
         <div className="items-center justify-center md:flex hidden gap-3">
           <div className="relative">
             <PiShoppingCartLight color="#104270" size={35} />
-            <div className="absolute text-xs font-bold bg-mainColor text-grayColor rounded-full w-[25px] h-[25px] flex justify-center items-center top-[-10px] left-[25px]">
+            <div className="absolute text-xs font-bold numbers bg-mainColor text-grayColor rounded-full w-[25px] h-[25px] flex justify-center items-center top-[-10px] left-[25px]">
               33
             </div>
           </div>

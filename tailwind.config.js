@@ -135,7 +135,9 @@ module.exports = {
         slideLeftAbout3: "slideLeft 1s forwards",
       },
       fontFamily: {
-        poppins: ["var(--font-poppins)", "sans-serif"], // Use the CSS variable here
+        russo: ["RussoOne", "sans-serif"],
+        swissra: ["Swissra", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"], // 👈 هنا
       },
     },
   },
