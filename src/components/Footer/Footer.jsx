@@ -65,7 +65,7 @@ const Footer = () => {
       </div>
       <p
         dir="ltr"
-        className="text-sm  text-grayColor  text-center border-t border-yellowColor w-full pt-3 mt-3 "
+        className="text-sm font-quicksand font-bold text-grayColor  text-center border-t border-yellowColor w-full pt-3 mt-3 "
       >
         &copy; 2025 Elmanahry Tools. All rights reserved.
       </p>

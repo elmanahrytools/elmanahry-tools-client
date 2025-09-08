@@ -18,17 +18,17 @@ const Section1 = () => {
           <h1 className=" text-5xl md:text-6xl mb-4 font-bold">
             المناهري تولز
           </h1>
-          <h2 className="text-2xl font-semibold mb-1">
+          <h2 className="text-2xl font-semibold">
             كل أدواتك في مكان واحد
           </h2>
           <p className="text-lg">
             أفضل الأدوات اليدوية والكهربائية من أشهر العلامات التجارية
           </p>
           <div className="flex items-center mt-6 gap-4">
-            <button className="hover:scale-105 rounded-md bg-grayColor hover:bg-[#c9c9c9] transition-all duration-300 text-textColor font-bold px-4 py-2">
+            <button className="hover:scale-105 text-lg rounded-md bg-grayColor hover:bg-[#c9c9c9] transition-all duration-300 text-textColor font-bold px-4 py-2">
               تصفح الماركات
             </button>
-            <button className="hover:scale-105 rounded-md bg-yellowColor hover:bg-[#eead22] transition-all duration-300 text-textColor font-bold px-4 py-2">
+            <button className="hover:scale-105 text-lg rounded-md bg-yellowColor hover:bg-[#eead22] transition-all duration-300 text-textColor font-bold px-4 py-2">
               تسوق الآن
             </button>
           </div>
