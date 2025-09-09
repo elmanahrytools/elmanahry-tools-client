@@ -43,7 +43,7 @@ const CartSidebar = ({ onClose }) => {
       {/* Sidebar */}
       <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-dvh shadow-lg p-4 md:p-4 flex flex-col animate-slideRight">
         {/* Header */}
-        <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-2">
+        <div className="flex justify-between items-center mb-2">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
           <button onClick={onClose}>
             <X
@@ -111,7 +111,7 @@ const CartSidebar = ({ onClose }) => {
         </div>
 
         {/* Footer */}
-        <div className="mt-4 flex flex-col gap-1">
+        <div className="mt-2 flex flex-col gap-1">
           <div className="flex">
             <p className="text-grayColor font-bold text-lg">
               لديك عدد{" "}
