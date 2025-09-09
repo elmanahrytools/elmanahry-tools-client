@@ -104,8 +104,8 @@
 
 /* For Chrome, Safari, Edge (WebKit-based browsers) */
 .customScrollbarBox::-webkit-scrollbar {
-  width: 6px; /* Set width of vertical scrollbar */
-  height: 6px; /* Set height of horizontal scrollbar */
+  width: 4px; /* Set width of vertical scrollbar */
+  height: 4px; /* Set height of horizontal scrollbar */
 }
 
 /* For Chrome, Safari, Edge (WebKit-based browsers) */

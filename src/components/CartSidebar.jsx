@@ -41,7 +41,7 @@ const CartSidebar = ({ onClose }) => {
       ></div>
 
       {/* Sidebar */}
-      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-full shadow-lg p-2 md:p-4 flex flex-col animate-slideRight">
+      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-dvh shadow-lg p-4 md:p-4 flex flex-col animate-slideRight">
         {/* Header */}
         <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-2">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
@@ -54,8 +54,11 @@ const CartSidebar = ({ onClose }) => {
         </div>
 
         {/* Items */}
-        <div className="flex-1 overflow-y-auto customScrollbarBox px-2">
-          <div>
+        <div
+          className="flex-1 overflow-y-auto customScrollbarBox pl-3"
+          dir="rtl"
+        >
+          <div dir="rtl" style={{ textAlign: "right" }}>
             {cartItems.length === 0 ? (
               <p className="text-grayColor">العربة فارغة</p>
             ) : (
