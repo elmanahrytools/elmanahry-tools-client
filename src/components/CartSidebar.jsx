@@ -15,6 +15,7 @@ const CartSidebar = ({ onClose }) => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -40,7 +41,7 @@ const CartSidebar = ({ onClose }) => {
       ></div>
 
       {/* Sidebar */}
-      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-full shadow-lg p-5 flex flex-col animate-slideRight overflow-y-auto">
+      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-full shadow-lg p-5 flex flex-col animate-slideRight md:overflow-y-auto overflow-y-scroll">
         {/* Header */}
         <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-2">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
@@ -113,7 +114,10 @@ const CartSidebar = ({ onClose }) => {
             <p className="text-grayColor font-bold text-lg">
               لديك عدد{" "}
               <span className="text-yellowColor">{cartItems.length}</span>{" "}
-              {cartItems.length > 2 ? "أصناف" : "صنف"} في العربة
+              {cartItems.length > 2 ? "أصناف" : "صنف"} في العربة{" "}
+              <span className="text-grayColor">
+                - <span className="text-yellowColor">{totalQuantity} قطعة</span>
+              </span>
             </p>
           </div>
           <div className="flex justify-between font-bold text-xl">

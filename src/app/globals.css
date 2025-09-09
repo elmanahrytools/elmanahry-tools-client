@@ -23,7 +23,8 @@
 @tailwind utilities;
 
 :root {
-  --mainColor: hsl(209, 75%, 25%);
+  /* --mainColor: hsl(209, 75%, 25%); */
+  --mainColor: #104270;
   --yellowColor: #ffc138;
   --blackColor: #414042;
   --textColor: #414042;
@@ -94,11 +95,11 @@
 
 .customScrollbar::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #104170; /* Thumb color */
+  background-color: #ffc138; /* Thumb color */
 }
 
 .customScrollbar::-webkit-scrollbar-track {
-  background: #02517d; /* Background color of the track */
+  background: #ffc138; /* Background color of the track */
 }
 /* For Chrome, Safari, Edge (WebKit-based browsers) */
 .customScrollbarBox::-webkit-scrollbar {
@@ -108,13 +109,9 @@
 
 .customScrollbarBox::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #104170; /* Thumb color */
+  background-color: #104270; /* Thumb color */
 }
 
-.customScrollbarBox::-webkit-scrollbar-track {
-  /* background: #02517d;
-  border-radius: 8px;  */
-}
 /* GLOBAL SCROLLBAR STYLES */
 ::-webkit-scrollbar {
   width: 6px;
@@ -123,11 +120,11 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: #104170;
+  background-color: #104270;
 }
 
 ::-webkit-scrollbar-track {
-  background: #104170;
+  background: #104270;
 }
 
 /* globals.css */
