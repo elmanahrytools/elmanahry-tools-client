@@ -22,7 +22,7 @@ const Section5 = () => {
         ref={ref}
         className="text-center text-black text-2xl md:text-3xl font-bold mb-8"
       >
-        شركاؤنا من الماركات العالمية🛠️
+        شركاؤنا من الماركات العالمية
       </h2>
 
       <div className="flex flex-wrap items-center justify-center gap-8">

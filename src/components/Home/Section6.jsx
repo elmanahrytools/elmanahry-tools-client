@@ -49,7 +49,7 @@ function SectionDiscounts() {
           ref={ref}
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"
         >
-          عروض وخصومات خاصة💥
+          عروض وخصومات خاصة
         </h2>
 
         {/* Tools Grid */}

@@ -28,7 +28,7 @@ function Section4() {
             inView ? "animate-fadeSlide" : "opacity-0"
           }`}
         >
-          الأكثر مبيعًا🔥
+          الأكثر مبيعًا
         </h2>
 
         {/* Tools Grid */}

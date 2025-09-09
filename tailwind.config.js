@@ -135,9 +135,9 @@ module.exports = {
         slideLeftAbout3: "slideLeft 1s forwards",
       },
       fontFamily: {
-        // russo: ["RussoOne", "sans-serif"],
-        // swissra: ["Swissra", "sans-serif"],
-        // quicksand: ["Quicksand", "sans-serif"],
+        russo: ["RussoOne", "sans-serif"],
+        swissra: ["Swissra", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
       },
     },
   },
