@@ -41,7 +41,7 @@ const CartSidebar = ({ onClose }) => {
       ></div>
 
       {/* Sidebar */}
-      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-full shadow-lg p-5 flex flex-col animate-slideRight md:overflow-y-auto overflow-y-scroll">
+      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-full shadow-lg p-2 md:p-4 flex flex-col animate-slideRight">
         {/* Header */}
         <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-2">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
@@ -54,58 +54,60 @@ const CartSidebar = ({ onClose }) => {
         </div>
 
         {/* Items */}
-        <div className="flex-1 overflow-y-auto">
-          {cartItems.length === 0 ? (
-            <p className="text-grayColor">العربة فارغة</p>
-          ) : (
-            cartItems.map((item) => (
-              <div
-                key={item.id}
-                className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-2"
-              >
-                <div>
-                  <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
-                    {item.name}
-                  </h3>
-                  <p className="text-lg text-grayColor">
-                    {item.price}
-                    <span className="text-yellowColor">x</span>
-                    {item.quantity}
-                  </p>
-                </div>
-
-                <div className="flex justify-between w-full items-center bg-[#e6e7e81c] px-3 py-1 rounded-md">
-                  <div className="flex flex-col text-grayColor">
-                    <h3>الإجمالي</h3>
-                    <p className="text-yellowColor text-lg numbers">
-                      {item.quantity * item.price} ج.م
+        <div className="flex-1 overflow-y-auto customScrollbarBox px-2">
+          <div>
+            {cartItems.length === 0 ? (
+              <p className="text-grayColor">العربة فارغة</p>
+            ) : (
+              cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-2"
+                >
+                  <div>
+                    <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
+                      {item.name}
+                    </h3>
+                    <p className="text-lg text-grayColor">
+                      {item.price}
+                      <span className="text-yellowColor">x</span>
+                      {item.quantity}
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CiCircleMinus
-                      className="text-grayColor cursor-pointer hover:scale-105 transition-all duration-300"
-                      size={35}
-                      onClick={() => dispatch(decreaseQty(item.id))}
-                    />
 
-                    <span className="text-yellowColor text-lg numbers">
-                      {item.quantity}
-                    </span>
-                    <CiCirclePlus
-                      onClick={() => dispatch(increaseQty(item.id))}
-                      className="text-grayColor cursor-pointer hover:scale-105 transition-all duration-300"
-                      size={35}
+                  <div className="flex justify-between w-full items-center bg-[#e6e7e81c] px-3 py-1 rounded-md">
+                    <div className="flex flex-col text-grayColor">
+                      <h3>الإجمالي</h3>
+                      <p className="text-yellowColor text-lg numbers">
+                        {item.quantity * item.price} ج.م
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CiCircleMinus
+                        className="text-grayColor cursor-pointer hover:scale-105 transition-all duration-300"
+                        size={35}
+                        onClick={() => dispatch(decreaseQty(item.id))}
+                      />
+
+                      <span className="text-yellowColor text-lg numbers">
+                        {item.quantity}
+                      </span>
+                      <CiCirclePlus
+                        onClick={() => dispatch(increaseQty(item.id))}
+                        className="text-grayColor cursor-pointer hover:scale-105 transition-all duration-300"
+                        size={35}
+                      />
+                    </div>
+                    <AiOutlineDelete
+                      onClick={() => dispatch(removeFromCart(item.id))}
+                      className="text-redColor cursor-pointer hover:scale-110 transition-all duration-300"
+                      size={26}
                     />
                   </div>
-                  <AiOutlineDelete
-                    onClick={() => dispatch(removeFromCart(item.id))}
-                    className="text-redColor cursor-pointer hover:scale-110 transition-all duration-300"
-                    size={26}
-                  />
                 </div>
-              </div>
-            ))
-          )}
+              ))
+            )}
+          </div>
         </div>
 
         {/* Footer */}

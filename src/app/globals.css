@@ -95,21 +95,28 @@
 
 .customScrollbar::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #ffc138; /* Thumb color */
+  background-color: #e6e7e8; /* Thumb color */
 }
 
 .customScrollbar::-webkit-scrollbar-track {
-  background: #ffc138; /* Background color of the track */
+  background: #104270; /* Background color of the track */
 }
+
 /* For Chrome, Safari, Edge (WebKit-based browsers) */
 .customScrollbarBox::-webkit-scrollbar {
   width: 6px; /* Set width of vertical scrollbar */
   height: 6px; /* Set height of horizontal scrollbar */
 }
 
+/* For Chrome, Safari, Edge (WebKit-based browsers) */
 .customScrollbarBox::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #104270; /* Thumb color */
+  background-color: #e6e7e8; /* Thumb color */
+}
+
+.customScrollbarBox::-webkit-scrollbar-thumb {
+  border-radius: 8px; /* Rounded corners for the thumb */
+  background-color: #e6e7e8; /* Thumb color */
 }
 
 /* GLOBAL SCROLLBAR STYLES */
