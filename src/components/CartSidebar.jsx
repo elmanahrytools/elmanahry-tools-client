@@ -54,11 +54,8 @@ const CartSidebar = ({ onClose }) => {
         </div>
 
         {/* Items */}
-        <div
-          className="flex-1 overflow-y-auto customScrollbarBox pl-3"
-          dir="rtl"
-        >
-          <div dir="rtl" style={{ textAlign: "right" }}>
+        <div className="flex-1 overflow-y-auto customScrollbarBox px-2">
+          <div className="mx-1">
             {cartItems.length === 0 ? (
               <p className="text-grayColor">العربة فارغة</p>
             ) : (

@@ -114,11 +114,6 @@
   background-color: #e6e7e8; /* Thumb color */
 }
 
-.customScrollbarBox::-webkit-scrollbar-thumb {
-  border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #e6e7e8; /* Thumb color */
-}
-
 /* GLOBAL SCROLLBAR STYLES */
 ::-webkit-scrollbar {
   width: 6px;
