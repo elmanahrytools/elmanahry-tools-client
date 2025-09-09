@@ -13,10 +13,10 @@ function Section4() {
   const cartItems = useSelector((state) => state.cart.items);
 
   const tools = [
-    { id: 1, name: "دريل كهربائي", price: "1500 ج.م", img: "/drill.png" },
-    { id: 2, name: "شاكوش يدوي", price: "120 ج.م", img: "/hammer.png" },
-    { id: 3, name: "مفاتيح متعددة", price: "350 ج.م", img: "/keys.png" },
-    { id: 4, name: "منشار كهربائي", price: "2200 ج.م", img: "/cut.png" },
+    { id: 1, name: "دريل كهربائي", price: 1500, img: "/drill.png" },
+    { id: 2, name: "شاكوش يدوي", price: 120, img: "/hammer.png" },
+    { id: 3, name: "مفاتيح متعددة", price: 350, img: "/keys.png" },
+    { id: 4, name: "منشار كهربائي", price: 2200, img: "/cut.png" },
   ];
 
   return (
@@ -91,7 +91,7 @@ function Section4() {
                         </button>
                       </div>
                     )}
-                    <p className="text-2xl numbers">{tool.price}</p>
+                    <p className="text-2xl numbers">{tool.price} ج.م</p>
                   </div>
                 </div>
               </div>
