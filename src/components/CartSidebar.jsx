@@ -43,7 +43,7 @@ const CartSidebar = ({ onClose }) => {
       {/* Sidebar */}
       <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-dvh shadow-lg p-4 md:p-4 flex flex-col animate-slideRight">
         {/* Header */}
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-2">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
           <button onClick={onClose}>
             <X
@@ -62,7 +62,7 @@ const CartSidebar = ({ onClose }) => {
               cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-2"
+                  className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-4"
                 >
                   <div>
                     <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
