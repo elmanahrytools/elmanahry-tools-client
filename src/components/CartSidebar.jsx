@@ -43,7 +43,7 @@ const CartSidebar = ({ onClose }) => {
       {/* Sidebar */}
       <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-dvh shadow-lg p-4 md:p-4 flex flex-col animate-slideRight">
         {/* Header */}
-        <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-2">
+        <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-3">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
           <button onClick={onClose}>
             <X
