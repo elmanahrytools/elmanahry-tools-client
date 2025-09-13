@@ -62,13 +62,13 @@ const CartSidebar = ({ onClose }) => {
               cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-4"
+                  className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-6"
                 >
                   <div>
                     <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
                       {item.name}
                     </h3>
-                    <p className="text-lg text-grayColor">
+                    <p className="text-md text-grayColor">
                       {item.price}
                       <span className="text-yellowColor">x</span>
                       {item.quantity}
@@ -78,7 +78,7 @@ const CartSidebar = ({ onClose }) => {
                   <div className="flex justify-between w-full items-center bg-[#e6e7e81c] px-3 py-1 rounded-md">
                     <div className="flex flex-col text-grayColor">
                       <h3>الإجمالي</h3>
-                      <p className="text-yellowColor text-lg numbers">
+                      <p className="text-yellowColor text-md numbers">
                         {item.quantity * item.price} ج.م
                       </p>
                     </div>
@@ -112,18 +112,20 @@ const CartSidebar = ({ onClose }) => {
 
         {/* Footer */}
         <div className="mt-2 flex flex-col gap-1">
-          <div className="flex">
+          <div className="flex flex-col">
             <p className="text-grayColor font-bold text-lg">
-              لديك عدد{" "}
+              {" "}
+              إجمالي القطع:{" "}
+              <span className="text-yellowColor">{totalQuantity}</span>
+            </p>
+            <p className="text-grayColor font-bold text-lg">
+              {" "}
+              إجمالي عدد الأصناف:{" "}
               <span className="text-yellowColor">{cartItems.length}</span>{" "}
-              {cartItems.length > 2 ? "أصناف" : "صنف"} في العربة{" "}
-              <span className="text-grayColor">
-                - <span className="text-yellowColor">{totalQuantity} قطعة</span>
-              </span>
             </p>
           </div>
-          <div className="flex justify-between font-bold text-xl">
-            <span className="text-grayColor">الإجمالي:</span>
+          <div className="flex font-bold items-center justify-between mt-2 text-xl">
+            <span className="text-grayColor">الإجمالي: </span>
             <span
               className={`transition-all duration-300 text-yellowColor text-xl ${
                 animate ? "scale-125" : "scale-100"
