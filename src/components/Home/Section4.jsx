@@ -69,7 +69,7 @@ function Section4() {
 
   return (
     <div className="py-10">
-      <div ref={ref} className="max-w-7xl mx-auto px-4">
+      <div ref={ref} className="max-w-7xl mx-auto p-2 md:px-4">
         {/* Title */}
         <h2
           className={`text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 ${
@@ -80,13 +80,13 @@ function Section4() {
         </h2>
 
         {/* Slider Container */}
-        <div className="relative flex justify-center items-center flex-col">
+        <div className="relative  flex justify-center items-center flex-col">
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-mainColor text-white p-2 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed"
-            style={{ marginLeft: isMobile ? "-10px" : "" }}
+            // style={{ marginLeft: isMobile ? "" : "" }}
           >
             <IoIosArrowBack size={24} />
           </button>
@@ -95,7 +95,7 @@ function Section4() {
             onClick={nextSlide}
             disabled={currentIndex + itemsPerSlide >= tools.length}
             className="absolute right-0 top-1/2  transform -translate-y-1/2 z-10 bg-mainColor text-white p-2 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed"
-            style={{ marginRight: isMobile ? "-10px" : "" }}
+            // style={{ marginRight: isMobile ? "-10px" : "" }}
           >
             <IoIosArrowForward size={24} />
           </button>
