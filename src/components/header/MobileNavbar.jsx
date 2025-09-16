@@ -18,7 +18,7 @@ function MobileNavbar({ onClose }) {
   }, []);
 
   return (
-    <div className="fixed animate-slideRight inset-0 z-50 bg-mainColor flex flex-col">
+    <div className="fixed animate-slideRightMobileMenu inset-0 z-50 bg-mainColor flex flex-col">
       {/* Top bar with close button */}
       <div className="flex justify-between bg-mainColor h-[70px] items-center p-4 border-b border-gray-200">
         <div className="flex items-center cursor-pointer">

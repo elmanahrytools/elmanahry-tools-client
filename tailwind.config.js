@@ -121,6 +121,9 @@ module.exports = {
         slideDown: "slideDown 0.4s forwards",
         slideDownHome: "slideDownHome 1s forwards",
         slideUp: "slideUp 0.5s forwards",
+        // Mobile menu Slider
+        slideRightMobileMenu: "slideRight 0.5s forwards",
+        // Mobile menu Slider
         // Cart Slider and fade in
         slideRightCart: "slideRight 0.5s forwards",
         fadeIn: "fadeIn 0.5s forwards",
@@ -132,7 +135,6 @@ module.exports = {
         slideRightDelay2: "slideRightParent 0.4s 0.2s forwards",
         slideRightDelay3: "slideRightParent 0.4s 0.3s forwards",
         slideRightDelay: "slideRight 0.4s 0.2s forwards",
-
         // Slider For Section 2
         sliderRight: "sliderRight 0.8s forwards",
         sliderLeft: "sliderLeft 0.8s forwards",
