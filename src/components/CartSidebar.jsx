@@ -36,12 +36,12 @@ const CartSidebar = ({ onClose }) => {
     <div className="fixed inset-0 z-50 flex">
       {/* Overlay */}
       <div
-        className="bg-black bg-opacity-50 flex-1 opacity-0 animate-fadeIn"
+        className="bg-black bg-opacity-50 flex-1 animate-fadeIn"
         onClick={onClose}
       ></div>
 
       {/* Sidebar */}
-      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-dvh shadow-lg p-4 md:p-4 flex flex-col animate-slideRight">
+      <div className="absolute left-0 md:w-[450px] w-full bg-mainColor h-dvh shadow-lg p-4 md:p-4 flex flex-col animate-slideRightCart">
         {/* Header */}
         <div className="flex justify-between items-center mb-5 border-b border-[#bdbdbd6c] pb-3">
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>

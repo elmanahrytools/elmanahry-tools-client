@@ -125,7 +125,7 @@ function Section2() {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center  gap-[6px] md:gap-4">
+        <div className="flex justify-center mt-6 gap-[6px] md:gap-4">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}

@@ -121,18 +121,27 @@ module.exports = {
         slideDown: "slideDown 0.4s forwards",
         slideDownHome: "slideDownHome 1s forwards",
         slideUp: "slideUp 0.5s forwards",
+        // Cart Slider and fade in
+        slideRightCart: "slideRight 0.5s forwards",
+        fadeIn: "fadeIn 0.5s forwards",
+        // Cart Slider and fade in
+        // Slider For Section 3
         slideRight: "slideRight 1s forwards",
+        slideLeft: "slideLeft 1s forwards",
+        // Slider For Section 3
         slideRightDelay2: "slideRightParent 0.4s 0.2s forwards",
         slideRightDelay3: "slideRightParent 0.4s 0.3s forwards",
         slideRightDelay: "slideRight 0.4s 0.2s forwards",
-        slideLeft: "slideLeft 1s forwards",
-        sliderRight: "sliderRight 0.4s ease-out",
-        sliderLeft: "sliderLeft 0.4s ease-out",
+
+        // Slider For Section 2
+        sliderRight: "sliderRight 0.8s forwards",
+        sliderLeft: "sliderLeft 0.8s forwards",
+        // Slider For Section 2
         slideDownFromParent: "slideDownFromParent 0.3s linear",
         slideLeftDelay2: "slideLeft 0.3s 0.2s forwards",
         slideLeftDelay3: "slideLeft 1s 0.3s forwards",
         slideRightHome: "slideRightHome 1s forwards",
-        fadeIn: "fadeIn 0.3s linear",
+
         fadeInAdmin: "fadeIn 1s forwards",
         fadeInDropDown: "fadeIn 0.4s forwards",
         slideLeftSector1: "slideLeft 0.6s forwards",
