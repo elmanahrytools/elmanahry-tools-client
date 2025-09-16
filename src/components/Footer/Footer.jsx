@@ -1,71 +1,106 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
-  const quickLinks = [
-    { title: "تواصل معنا", href: "/contact" },
+  const importantLinks = [
+    { title: "المنتجات", href: "/" },
+    { title: "العلامات التجارية", href: "/" },
     { title: "عن الشركة", href: "/about" },
   ];
-  return (
-    <footer
-      id="footer"
-      className="bg-mainColor w-full py-3 px-2 md:px-4   flex justify-center items-center  bottom-0 flex-col"
-    >
-      <div className="w-full flex justify-center max-w-7xl items-center flex-col md:flex-row lg:flex-row gap-10">
-        <Image
-          src="/logo.png"
-          width={300}
-          height={100}
-          alt="Alex Logo"
-          loading="lazy"
-          unoptimized
-          className="my-6"
-        />
-        {/* <div className="flex flex-col gap-5">
-          <h1 className="text-2xl text-grayColor font-semibold">
-            لينكات سريعه
-          </h1>
 
-          <ul className="flex gap-3 md:gap-5 text-grayColor  text-lg cursor-pointer flex-col md:flex-row justify-center items-center flex-wrap">
-            {quickLinks.map((link) => (
-              <Link key={link.title} href={link.href}>
-                <li className="hover:text-mainColor transition-colors duration-300">
+  const contactLinks = [
+    { title: "تواصل معنا", href: "/contact" },
+    { title: "info@elmanahry.com", href: "mailto:info@elmanahry.com" },
+    { title: "01162716222+", href: "tel:+201001234567" },
+  ];
+
+  const socials = [
+    { icon: <FaFacebookF size={20} />, href: "https://facebook.com" },
+    { icon: <FaInstagram size={20} />, href: "https://instagram.com" },
+    { icon: <FaLinkedinIn size={20} />, href: "https://linkedin.com" },
+    { icon: <FaYoutube size={20} />, href: "https://youtube.com" },
+  ];
+
+  return (
+    <footer className="bg-mainColor w-full pt-10 pb-4  flex justify-center items-center flex-col text-grayColor">
+      <div className="w-full max-w-7xl md:px-4 px-2  grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Logo */}
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <Image
+            src="/logo.png"
+            width={200}
+            height={80}
+            alt="Elmanahry Logo"
+            loading="lazy"
+            unoptimized
+          />
+          <p className="text-[16px] font-medium  text-gray-300 text-center md:text-start">
+            أفضل الأدوات والمعدات الصناعية بأعلى جودة في مصر.
+          </p>
+        </div>
+
+        {/* Important Links */}
+        <div className="flex flex-col items-center gap-4">
+          <h3 className="text-lg font-bold text-yellowColor">روابط مهمة</h3>
+          <ul className="flex flex-col gap-2 text-center font-medium text-base">
+            {importantLinks.map((link, i) => (
+              <li key={i}>
+                <Link
+                  href={link.href}
+                  className="hover:text-yellowColor transition"
+                >
                   {link.title}
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ul>
+        </div>
 
-          <div className="flex flex-col justify-center items-center gap-3">
-            <div className="flex gap-2">
-              <a href="#">
-                <Image
-                  src={"/fb-footer-icon.svg"}
-                  width={30}
-                  height={30}
-                  alt="FB Icon"
-                  className="transition-transform duration-300 hover:scale-110 cursor-pointer"
-                  unoptimized
-                />
-              </a>
-              <a href="#">
-                {" "}
-                <Image
-                  src={"/linkedin-footer-icon.svg"}
-                  width={30}
-                  height={30}
-                  alt="Linkedin Icon"
-                  className="transition-transform duration-300 hover:scale-110 cursor-pointer"
-                  unoptimized
-                />
-              </a>
-            </div>
+        {/* Contact Links */}
+        <div className="flex flex-col items-center  gap-4">
+          <h3 className="text-lg font-bold text-yellowColor">تواصل معنا</h3>
+          <ul className="flex flex-col gap-2 text-center  font-medium text-base">
+            {contactLinks.map((link, i) => (
+              <li key={i}>
+                <Link
+                  href={link.href}
+                  className="hover:text-yellowColor transition"
+                >
+                  {link.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex flex-col items-center gap-4">
+          <h3 className="text-lg font-bold text-yellowColor">تابعنا</h3>
+          <div className="flex gap-3">
+            {socials.map((s, i) => (
+              <Link
+                key={i}
+                href={s.href}
+                target="_blank"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-yellowColor text-yellowColor hover:bg-yellowColor hover:text-mainColor transition"
+              >
+                {s.icon}
+              </Link>
+            ))}
           </div>
-        </div> */}
+        </div>
       </div>
+
+      {/* Copy Rights */}
       <p
         dir="ltr"
-        className="text-sm font-quicksand font-bold text-grayColor  text-center border-t border-yellowColor w-full pt-3 mt-3 "
+        className="text-xs md:text-sm  font-bold text-grayColor text-center border-t border-yellowColor w-full pt-4 mt-8"
       >
         &copy; 2025 Elmanahry Tools. All rights reserved.
       </p>
