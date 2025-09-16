@@ -61,7 +61,7 @@ function Section2() {
 
   return (
     <div className="py-10">
-      <div ref={ref} className="max-w-7xl mx-auto p-2 md:px-4">
+      <div ref={ref} className="max-w-7xl mx-auto px-2 md:px-4">
         <div
           ref={ref}
           className={`relative  flex justify-center items-center ${

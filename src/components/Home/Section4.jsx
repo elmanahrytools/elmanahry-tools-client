@@ -69,7 +69,7 @@ function Section4() {
 
   return (
     <div className="py-10">
-      <div ref={ref} className="max-w-7xl mx-auto p-2 md:px-4">
+      <div ref={ref} className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Title */}
         <h2
           className={`text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 ${
@@ -180,7 +180,7 @@ function Section4() {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(slideIndex)}
-                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-1 md:w-6 md:h-1 rounded-full transition-all duration-300 ${
                     Math.floor(currentIndex / itemsPerSlide) === index
                       ? "bg-mainColor"
                       : "bg-gray-300"
