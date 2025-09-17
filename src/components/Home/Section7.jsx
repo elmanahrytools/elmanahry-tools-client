@@ -31,36 +31,36 @@ function Section7() {
         </h2>
 
         {/* Small Grid of 6 Cards */}
-        <div className="flex flex-wrap items-center justify-center md:justify-between gap-8">
+        <div className="grid md:grid-cols-4 lg:grid-cols-6 grid-cols-2 gap-2 md:gap-8 justify-items-center">
           {cats.map((cat) => (
             <div
               key={cat.id}
-              className="relative flex flex-col items-center rounded-2xl shadow-xl bg-mainColor transition-transform duration-300 overflow-hidden w-[90%] md:w-[180px] pb-4"
+              className="relative flex flex-col items-center rounded-2xl shadow-xl bg-mainColor transition-transform duration-300 overflow-hidden w-full md:w-[180px] pb-4"
             >
               {/* Image */}
-              <div className="flex items-center justify-center h-32 p-3 bg-mainColor/20 w-full">
+              <div className="flex items-center justify-center h-20 w-20 md:h-32 md:w-32 p-2 md:p-3 bg-mainColor/20">
                 <Image
                   src={cat.src}
                   alt={cat.label}
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="object-contain w-[85%] h-[85%] transition-transform duration-500"
+                  className="object-contain w-[100%] h-[100%] md:!w-[95%] md:!h-[95%] transition-transform duration-500"
                 />
               </div>
 
               {/* Content */}
-              <div className="p-2 flex flex-col items-center text-center">
-                <h3 className="text-lg font-semibold text-grayColor">
+              <div className="p-1 md:p-2 flex flex-col items-center text-center">
+                <h3 className="text-md md:text-lg font-semibold text-grayColor">
                   {cat.label}
                 </h3>
-                <p className="text-lg font-bold text-yellowColor  numbers">
+                <p className="text-md md:text-lg font-bold text-yellowColor  numbers">
                   {cat.price}
                 </p>
               </div>
 
               {/* Floating Cart Button */}
-              <button className="mt-2 flex items-center gap-2 text-sm bg-grayColor hover:bg-yellowColor hover:text-textColor px-3 py-2 rounded-lg shadow-md transition">
+              <button className="mt-2 flex items-center gap-2 text-xs md:text-sm bg-grayColor hover:bg-yellowColor hover:text-textColor px-2 md:px-3 py-2 md:py-2 rounded-lg shadow-md transition">
                 أضف الي العربه
                 <ShoppingCart size={20} />
               </button>
