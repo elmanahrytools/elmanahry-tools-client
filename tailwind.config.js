@@ -94,11 +94,11 @@ module.exports = {
           "100%": { transform: "translateX(0vw)", opacity: "1" },
         },
         sliderRight: {
-          "0%": { transform: "translateX(40px)", opacity: "1" },
-          "100%": { transform: "translateX(0px)", opacity: "1" },
+          "0%": { transform: "translateX(60px)", opacity: "0" },
+          "100%": { transform: "translateX(px)", opacity: "1" },
         },
         sliderLeft: {
-          "0%": { transform: "translateX(-40px)", opacity: "1" },
+          "0%": { transform: "translateX(-60px)", opacity: "0" },
           "100%": { transform: "translateX(0px)", opacity: "1" },
         },
         fadeIn: {
@@ -136,8 +136,8 @@ module.exports = {
         slideRightDelay3: "slideRightParent 0.4s 0.3s forwards",
         slideRightDelay: "slideRight 0.4s 0.2s forwards",
         // Slider For Section 2
-        sliderRight: "sliderRight 0.8s forwards",
-        sliderLeft: "sliderLeft 0.8s forwards",
+        sliderRight: "sliderRight 0.5s forwards",
+        sliderLeft: "sliderLeft 0.5s forwards",
         // Slider For Section 2
         slideDownFromParent: "slideDownFromParent 0.3s linear",
         slideLeftDelay2: "slideLeft 0.3s 0.2s forwards",
