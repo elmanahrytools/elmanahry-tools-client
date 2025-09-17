@@ -12,30 +12,155 @@ function Section4() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const tools = [
-    { id: 1, name: "دريل كهربائي", price: 1500, img: "/drill.png" },
-    { id: 2, name: "شاكوش يدوي", price: 120, img: "/hammer.png" },
-    { id: 3, name: "مفاتيح متعددة", price: 300, img: "/keys.png" },
-    { id: 4, name: "منشار كهربائي", price: 200, img: "/cut.png" },
-    { id: 5, name: "دريل كهربائي 2", price: 1550, img: "/drill.png" },
-    { id: 6, name: "شاكوش يدوي 2", price: 130, img: "/hammer.png" },
-    { id: 7, name: "مفاتيح متعددة 2", price: 320, img: "/keys.png" },
-    { id: 8, name: "منشار كهربائي 2", price: 210, img: "/cut.png" },
-    { id: 9, name: "دريل كهربائي 3", price: 1600, img: "/drill.png" },
-    { id: 10, name: "شاكوش يدوي 3", price: 140, img: "/hammer.png" },
-    { id: 11, name: "مفاتيح متعددة 3", price: 330, img: "/keys.png" },
-    { id: 12, name: "منشار كهربائي 3", price: 220, img: "/cut.png" },
-    { id: 13, name: "دريل كهربائي 4", price: 1650, img: "/drill.png" },
-    { id: 14, name: "شاكوش يدوي 4", price: 150, img: "/hammer.png" },
-    { id: 15, name: "مفاتيح متعددة 4", price: 340, img: "/keys.png" },
-    { id: 16, name: "منشار كهربائي 4", price: 230, img: "/cut.png" },
-    { id: 17, name: "دريل كهربائي 5", price: 1700, img: "/drill.png" },
-    { id: 18, name: "شاكوش يدوي 5", price: 160, img: "/hammer.png" },
-    { id: 19, name: "مفاتيح متعددة 5", price: 350, img: "/keys.png" },
-    { id: 20, name: "منشار كهربائي 5", price: 240, img: "/cut.png" },
-    { id: 21, name: "منشار كهربائي 5", price: 240, img: "/cut.png" },
+    {
+      id: 1,
+      name: "دريل كهربائي",
+      price: 1500,
+      discountPrice: 1200,
+      img: "/drill.png",
+    },
+    {
+      id: 2,
+      name: "شاكوش يدوي",
+      price: 120,
+      discountPrice: 96,
+      img: "/hammer.png",
+    },
+    {
+      id: 3,
+      name: "مفاتيح متعددة",
+      price: 300,
+      discountPrice: 240,
+      img: "/keys.png",
+    },
+    {
+      id: 4,
+      name: "منشار كهربائي",
+      price: 200,
+      discountPrice: 160,
+      img: "/cut.png",
+    },
+    {
+      id: 5,
+      name: "دريل كهربائي 2",
+      price: 1550,
+      discountPrice: 1240,
+      img: "/drill.png",
+    },
+    {
+      id: 6,
+      name: "شاكوش يدوي 2",
+      price: 130,
+      discountPrice: 104,
+      img: "/hammer.png",
+    },
+    {
+      id: 7,
+      name: "مفاتيح متعددة 2",
+      price: 320,
+      discountPrice: 256,
+      img: "/keys.png",
+    },
+    {
+      id: 8,
+      name: "منشار كهربائي 2",
+      price: 210,
+      discountPrice: 168,
+      img: "/cut.png",
+    },
+    {
+      id: 9,
+      name: "دريل كهربائي 3",
+      price: 1600,
+      discountPrice: 1280,
+      img: "/drill.png",
+    },
+    {
+      id: 10,
+      name: "شاكوش يدوي 3",
+      price: 140,
+      discountPrice: 112,
+      img: "/hammer.png",
+    },
+    {
+      id: 11,
+      name: "مفاتيح متعددة 3",
+      price: 330,
+      discountPrice: 264,
+      img: "/keys.png",
+    },
+    {
+      id: 12,
+      name: "منشار كهربائي 3",
+      price: 220,
+      discountPrice: 176,
+      img: "/cut.png",
+    },
+    {
+      id: 13,
+      name: "دريل كهربائي 4",
+      price: 1650,
+      discountPrice: 1320,
+      img: "/drill.png",
+    },
+    {
+      id: 14,
+      name: "شاكوش يدوي 4",
+      price: 150,
+      discountPrice: 120,
+      img: "/hammer.png",
+    },
+    {
+      id: 15,
+      name: "مفاتيح متعددة 4",
+      price: 340,
+      discountPrice: 272,
+      img: "/keys.png",
+    },
+    {
+      id: 16,
+      name: "منشار كهربائي 4",
+      price: 230,
+      discountPrice: 184,
+      img: "/cut.png",
+    },
+    {
+      id: 17,
+      name: "دريل كهربائي 5",
+      price: 1700,
+      discountPrice: 1360,
+      img: "/drill.png",
+    },
+    {
+      id: 18,
+      name: "شاكوش يدوي 5",
+      price: 160,
+      discountPrice: 128,
+      img: "/hammer.png",
+    },
+    {
+      id: 19,
+      name: "مفاتيح متعددة 5",
+      price: 350,
+      discountPrice: 280,
+      img: "/keys.png",
+    },
+    {
+      id: 20,
+      name: "منشار كهربائي 5",
+      price: 240,
+      discountPrice: 192,
+      img: "/cut.png",
+    },
+    {
+      id: 21,
+      name: "منشار كهربائي 5",
+      price: 240,
+      discountPrice: 192,
+      img: "/cut.png",
+    },
   ];
 
   const [isMobile, setIsMobile] = useState(false);
@@ -64,11 +189,11 @@ function Section4() {
   const visibleTools = tools.slice(startIndex, startIndex + itemsPerSlide);
 
   return (
-    <div className="py-10">
+    <div className="mt-[80px]">
       <div ref={ref} className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Title */}
         <h2
-          className={`text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 ${
+          className={`text-3xl md:text-4xl font-bold text-center mb-7 md:mb-10 text-gray-900 ${
             inView ? "animate-fadeSlide" : "opacity-0"
           }`}
         >

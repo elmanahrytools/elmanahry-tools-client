@@ -16,7 +16,7 @@ function Section7() {
   ];
 
   return (
-    <div className="py-14">
+    <div className="mt-[80px]">
       <div
         className={`max-w-7xl mx-auto px-4 ${
           inView ? "animate-fadeSlide" : "opacity-0"
@@ -25,17 +25,17 @@ function Section7() {
         {/* Title */}
         <h2
           ref={ref}
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
+          className="text-3xl md:text-4xl font-bold text-center  mb-7 md:mb-10 text-gray-900"
         >
           منتجات جديدة
         </h2>
 
         {/* Small Grid of 6 Cards */}
-        <div className="grid md:grid-cols-4 lg:grid-cols-6 grid-cols-2 gap-2 md:gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-8 justify-items-center">
           {cats.map((cat) => (
             <div
               key={cat.id}
-              className="relative flex flex-col items-center rounded-2xl shadow-xl bg-mainColor transition-transform duration-300 overflow-hidden w-full md:w-[180px] pb-4"
+              className="relative flex flex-col items-center rounded-2xl shadow-xl bg-mainColor transition-transform duration-300 overflow-hidden w-full lg:w-[180px] pb-4"
             >
               {/* Image */}
               <div className="flex items-center justify-center h-20 w-20 md:h-32 md:w-32 p-2 md:p-3 bg-mainColor/20">

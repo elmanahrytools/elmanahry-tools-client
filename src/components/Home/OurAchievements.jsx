@@ -42,7 +42,7 @@ const Section3 = () => {
   ];
 
   return (
-    <div className="relative  text-grayColor py-16 flex items-center justify-center">
+    <div className="relative  text-grayColor mt-[80px] flex items-center justify-center">
       {/* Red blur effect */}
 
       <div
@@ -53,7 +53,7 @@ const Section3 = () => {
         <h2 className="text-3xl text-black md:text-5xl font-bold mb-2">
           إنجازاتنا تتحدث عنا
         </h2>
-        <p className="text-lg md:text-xl mb-16  max-w-3xl mx-auto text-black">
+        <p className="text-lg md:text-xl md:mb-10 mb-7  max-w-3xl mx-auto text-black">
           نفتخر بكوننا من الشركات الرائدة في مجال الأدوات والمعدات، حيث نسعى
           دائمًا لتقديم أعلى جودة وخدمة لعملائنا الكرام في كل مكان.
         </p>
