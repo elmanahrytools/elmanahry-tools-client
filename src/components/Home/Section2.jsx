@@ -44,6 +44,8 @@ function Section2() {
     setDirection("right");
     if (startIndex < cats.length - itemsToShow) {
       setStartIndex(startIndex + itemsToShow);
+    } else {
+      setStartIndex(0);
     }
   };
 
@@ -52,6 +54,8 @@ function Section2() {
 
     if (startIndex > 0) {
       setStartIndex(startIndex - itemsToShow);
+    } else {
+      setStartIndex(cats.length - itemsToShow);
     }
   };
 
@@ -71,13 +75,9 @@ function Section2() {
           {/* Arrow left */}
           <button
             // style={{ marginLeft: isMobile ? "" : "" }}
-            disabled={startIndex > 0 ? false : true}
+            // disabled={startIndex > 0 ? false : true}
             onClick={handlePrev}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 transition-all duration-300 shadow-md rounded-full p-2   ${
-              startIndex > 0
-                ? "bg-yellowColor  hover:scale-110"
-                : "bg-[#c9c9c9] hover:bg-[#c9c9c9]"
-            } transition`}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-yellowColor  hover:scale-110 transition-all duration-300 shadow-md rounded-full p-2  `}
           >
             <IoIosArrowBack size={24} />
           </button>
@@ -112,13 +112,9 @@ function Section2() {
           {/* Arrow right */}
           <button
             // style={{ marginRight: isMobile ? "0" : "" }}
-            disabled={startIndex < cats.length - itemsToShow ? false : true}
+            // disabled={startIndex < cats.length - itemsToShow ? false : true}
             onClick={handleNext}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 transition-all duration-300   ${
-              startIndex < cats.length - itemsToShow
-                ? "bg-yellowColor  hover:scale-110"
-                : "bg-[#c9c9c9] hover:bg-[#c9c9c9]"
-            } shadow-md rounded-full p-2  transition`}
+            className={`absolute right-0 top-1/2 -translate-y-1/2  bg-yellowColor  hover:scale-110 z-10 transition-all duration-300  shadow-md rounded-full p-2 `}
           >
             <IoIosArrowForward size={24} />
           </button>

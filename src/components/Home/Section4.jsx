@@ -49,23 +49,19 @@ function Section4() {
   const itemsPerSlide = isMobile ? 1 : 4;
   const totalSlides = Math.ceil(tools.length / itemsPerSlide);
   const [direction, setDirection] = useState("right");
+
+  const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
     setDirection("right");
-    setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerSlide >= tools.length ? 0 : prevIndex + itemsPerSlide
-    );
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
   const prevSlide = () => {
     setDirection("left");
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0
-        ? Math.max(0, tools.length - itemsPerSlide)
-        : prevIndex - itemsPerSlide
-    );
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
-
-  const visibleTools = tools.slice(currentIndex, currentIndex + itemsPerSlide);
+  const startIndex = currentSlide * itemsPerSlide;
+  const visibleTools = tools.slice(startIndex, startIndex + itemsPerSlide);
 
   return (
     <div className="py-10">
@@ -84,7 +80,6 @@ function Section4() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            disabled={currentIndex === 0}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-mainColor text-white p-2 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed"
             // style={{ marginLeft: isMobile ? "" : "" }}
           >
@@ -93,8 +88,7 @@ function Section4() {
 
           <button
             onClick={nextSlide}
-            disabled={currentIndex + itemsPerSlide >= tools.length}
-            className="absolute right-0 top-1/2  transform -translate-y-1/2 z-10 bg-mainColor text-white p-2 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed"
+            className="absolute  right-0 top-1/2  transform -translate-y-1/2 z-10 bg-mainColor text-white p-2 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed"
             // style={{ marginRight: isMobile ? "-10px" : "" }}
           >
             <IoIosArrowForward size={24} />
@@ -174,20 +168,15 @@ function Section4() {
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-8 gap-[6px] md:gap-4">
-            {Array.from({ length: totalSlides }).map((_, index) => {
-              const slideIndex = index * itemsPerSlide;
-              return (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(slideIndex)}
-                  className={`w-2 h-1 md:w-6 md:h-1 rounded-full transition-all duration-300 ${
-                    Math.floor(currentIndex / itemsPerSlide) === index
-                      ? "bg-mainColor"
-                      : "bg-gray-300"
-                  }`}
-                />
-              );
-            })}
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-1 md:w-6 md:h-1 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? "bg-mainColor" : "bg-gray-300"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

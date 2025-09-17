@@ -4,11 +4,12 @@ import { X } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { increaseQty, decreaseQty, removeFromCart } from "@/store/cartSlice";
 import { AiOutlineDelete } from "react-icons/ai";
-
+import Image from "next/image";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
 const CartSidebar = ({ onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
+  console.log(cartItems);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
   const total = cartItems.reduce(
@@ -64,15 +65,27 @@ const CartSidebar = ({ onClose }) => {
                   key={item.id}
                   className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-6"
                 >
-                  <div>
-                    <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
-                      {item.name}
-                    </h3>
-                    <p className="text-md text-grayColor">
-                      {item.price}
-                      <span className="text-yellowColor">x</span>
-                      {item.quantity}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-white relative p-1 rounded-lg w-[50px] h-[50px] max-h-[50px] max-w-[50px] flex justify-center items-center">
+                      <Image
+                        src={item.img}
+                        width={50}
+                        height={50}
+                        alt={item.name}
+                        className="object-contain max-h-full max-w-full"
+                      />
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
+                        {item.name}
+                      </h3>
+                      <p className="text-md text-grayColor">
+                        {item.price}
+                        <span className="text-yellowColor">x</span>
+                        {item.quantity}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="flex justify-between w-full items-center bg-[#e6e7e81c] px-3 py-1 rounded-md">

@@ -1,34 +1,43 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import CountUp from "react-countup";
 import { FaAward, FaUsers, FaBoxOpen, FaIndustry } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 const Section3 = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const stats = [
     {
       number: 10,
       suffix: "+",
       label: "سنوات خبرة",
-      icon: <FaAward size={40} />,
+      icon: <FaAward size={isMobile ? 33 : 40} />,
     },
     {
       number: 5000,
       suffix: "+",
       label: "عميل سعيد",
-      icon: <FaUsers size={40} />,
+      icon: <FaUsers size={isMobile ? 33 : 40} />,
     },
     {
       number: 2000,
       suffix: "+",
       label: "منتج متاح",
-      icon: <FaBoxOpen size={40} />,
+      icon: <FaBoxOpen size={isMobile ? 33 : 40} />,
     },
     {
       number: 20,
       suffix: "+",
       label: "ماركات عالمية",
-      icon: <FaIndustry size={40} />,
+      icon: <FaIndustry size={isMobile ? 33 : 40} />,
     },
   ];
 
@@ -51,23 +60,23 @@ const Section3 = () => {
 
         <div
           ref={ref}
-          className="flex  flex-col md:flex-row items-center justify-between gap-10 w-full "
+          className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-10 "
         >
           {stats.map((stat, i) => (
             <div
               key={i}
-              className=" group flex flex-col w-full bg-gradient-to-r from-mainColor to-[#1968b1] hover:from-[#cf920d] hover:to-yellowColor items-center  px-8 py-4 rounded-2xl backdrop-blur-sm 
-                          transform hover:-translate-y-3 hover:shadow-xl duration-300 transition-all"
+              className=" group flex flex-col  bg-gradient-to-r from-mainColor to-[#1968b1] hover:from-[#cf920d] hover:to-yellowColor items-center  md:px-8 md:py-4 px-4 py-4 rounded-2xl backdrop-blur-sm 
+                          transform md:hover:-translate-y-3 hover:shadow-xl duration-300 transition-all"
             >
-              <div className="mb-4 text-yellowColor group-hover:text-mainColor">
+              <div className="mb-2 md:mb-4 text-yellowColor group-hover:text-mainColor">
                 {stat.icon}
               </div>
-              <span className="text-4xl numbers font-bold md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-yellowColor to-[#cf920d] group-hover:from-[#1968b1] group-hover:to-mainColor">
+              <span className="text-2xl numbers font-bold md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-yellowColor to-[#cf920d] group-hover:from-[#1968b1] group-hover:to-mainColor">
                 {inView ? <CountUp end={stat.number} duration={3} /> : 0}
 
                 {stat.suffix}
               </span>
-              <p className="mt-3 text-xl text-grayColor group-hover:text-mainColor">
+              <p className="md:mt-3 mt-1 text-lg md:text-xl text-grayColor group-hover:text-mainColor">
                 {stat.label}
               </p>
             </div>
