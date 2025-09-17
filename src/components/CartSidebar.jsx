@@ -47,7 +47,7 @@ const CartSidebar = ({ onClose }) => {
           <h2 className="text-2xl font-bold text-grayColor">عربة التسوق</h2>
           <button onClick={onClose}>
             <X
-              size={24}
+              size={32}
               className="text-grayColor  hover:text-redColor transition-all duration-300"
             />
           </button>

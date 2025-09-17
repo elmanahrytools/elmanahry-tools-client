@@ -32,7 +32,10 @@ function MobileNavbar({ onClose }) {
           />
         </div>
         <button onClick={onClose} className="text-gray-700">
-          <X size={32} color="white" />
+          <X
+            size={32}
+            className="text-grayColor  hover:text-redColor transition-all duration-300"
+          />
         </button>
       </div>
 
