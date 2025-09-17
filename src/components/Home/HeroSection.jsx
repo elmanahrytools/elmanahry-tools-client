@@ -53,18 +53,18 @@ const Section1 = () => {
           {/* Floating small tools */}
           <Image
             src="/hammer.png"
-            width={isMobile ? 30 : 60}
+            width={isMobile ? 35 : 60}
             height={80}
             alt="hammer"
-            className="absolute top-[10px] md:top-[10px] left-[7px] md:left-[-10px] animate-rotate12  "
+            className="absolute top-[8px] md:top-[10px] left-[-2px] md:left-[-10px] animate-rotate12  "
           />
 
           <Image
             src="/drill.png"
-            width={isMobile ? 70 : 150}
+            width={isMobile ? 75 : 150}
             height={100}
             alt="drill"
-            className="absolute md:bottom-[40px] md:right-[-100px]  bottom-[50px] right-[-30px]"
+            className="absolute  md:right-[-100px] bottom-[50px] right-[-40px]"
           />
           {/* <Image
             src="/diamond.png"
