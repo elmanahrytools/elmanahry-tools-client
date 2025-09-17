@@ -2,8 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import { useState, useEffect } from "react";
 const Section1 = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       id="hero"
@@ -36,7 +44,7 @@ const Section1 = () => {
         <div className="relative animate-slideDown">
           <Image
             src="/hero.webp"
-            width={450}
+            width={isMobile ? 280 : 450}
             height={350}
             alt="hero logo"
             className="z-10 relative"
@@ -45,18 +53,18 @@ const Section1 = () => {
           {/* Floating small tools */}
           <Image
             src="/hammer.png"
-            width={60}
+            width={isMobile ? 30 : 60}
             height={80}
             alt="hammer"
-            className="absolute top-[10px] left-[-10px] animate-rotate12 md:block hidden"
+            className="absolute top-[10px] md:top-[10px] left-[7px] md:left-[-10px] animate-rotate12  "
           />
 
           <Image
             src="/drill.png"
-            width={150}
+            width={isMobile ? 70 : 150}
             height={100}
             alt="drill"
-            className="absolute bottom-[40px] right-[-100px]  md:block hidden"
+            className="absolute md:bottom-[40px] md:right-[-100px]  bottom-[50px] right-[-30px]"
           />
           {/* <Image
             src="/diamond.png"

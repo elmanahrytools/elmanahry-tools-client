@@ -188,7 +188,7 @@ function Section7() {
             return (
               <div
                 key={tool.id}
-                className="relative flex flex-col items-center rounded-2xl shadow-xl bg-mainColor transition-transform duration-300 overflow-hidden w-full lg:w-[180px] pb-4"
+                className="relative flex flex-col items-center rounded-2xl shadow-xl bg-mainColor transition-transform duration-300 overflow-hidden w-full lg:w-[180px] pb-4 md:pt-0 pt-3"
               >
                 {/* Image */}
                 <div className="flex items-center justify-center h-20 w-20 md:h-32 md:w-32 p-2 md:p-3 bg-mainColor/20">
