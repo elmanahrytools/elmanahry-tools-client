@@ -103,30 +103,30 @@
 }
 
 /* For Chrome, Safari, Edge (WebKit-based browsers) */
-.customScrollbarBox::-webkit-scrollbar {
+.cartScrollbar::-webkit-scrollbar {
   width: 4px; /* Set width of vertical scrollbar */
   height: 4px; /* Set height of horizontal scrollbar */
 }
 
 /* For Chrome, Safari, Edge (WebKit-based browsers) */
-.customScrollbarBox::-webkit-scrollbar-thumb {
+.cartScrollbar::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
   background-color: #e6e7e8; /* Thumb color */
 }
 
 /* GLOBAL SCROLLBAR STYLES */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+.headerScrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
 
-::-webkit-scrollbar-thumb {
+.headerScrollbar::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: #104270;
 }
 
-::-webkit-scrollbar-track {
-  background: #104270;
+.headerScrollbar::-webkit-scrollbar-track {
+  background: #e6e7e8;
 }
 
 /* globals.css */
