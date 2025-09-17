@@ -148,19 +148,19 @@ function Section4() {
                       ) : (
                         <div className="flex items-center h-[44px] gap-2 bg-mainColor text-white px-3 py-2 rounded-full shadow-md">
                           <button
-                            onClick={() => dispatch(decreaseQty(tool.id))}
+                            onClick={() => dispatch(increaseQty(tool.id))}
                             className="p-1 hover:bg-grayColor hover:text-mainColor rounded-full transition"
                           >
-                            <Minus size={16} />
+                            <Plus size={16} />
                           </button>
                           <span className="text-sm font-bold w-6 text-center">
                             {itemInCart.quantity}
                           </span>
                           <button
-                            onClick={() => dispatch(increaseQty(tool.id))}
+                            onClick={() => dispatch(decreaseQty(tool.id))}
                             className="p-1 hover:bg-grayColor hover:text-mainColor rounded-full transition"
                           >
-                            <Plus size={16} />
+                            <Minus size={16} />
                           </button>
                         </div>
                       )}
