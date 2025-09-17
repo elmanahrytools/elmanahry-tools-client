@@ -272,7 +272,7 @@ function Section4() {
                           >
                             <Plus size={16} />
                           </button>
-                          <span className="text-sm font-bold w-6 text-center">
+                          <span className="text-sm font-bold w-6 text-center numbers">
                             {itemInCart.quantity}
                           </span>
                           <button

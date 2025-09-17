@@ -228,7 +228,7 @@ function Section7() {
                     >
                       <Plus size={16} />
                     </button>
-                    <span className="text-sm font-bold w-6 text-center text-mainColor">
+                    <span className="text-sm font-bold w-6 numbers text-center text-mainColor">
                       {itemInCart.quantity}
                     </span>
                     <button

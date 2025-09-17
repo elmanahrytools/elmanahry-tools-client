@@ -239,7 +239,7 @@ function SectionDiscounts() {
                       >
                         <Plus size={isMobile ? 14 : 16} />
                       </button>
-                      <span className="text-xs md:text-sm font-bold w-6 text-center">
+                      <span className="text-xs md:text-sm font-bold w-6 text-center numbers">
                         {itemInCart.quantity}
                       </span>
                       <button
