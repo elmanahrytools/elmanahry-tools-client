@@ -36,7 +36,7 @@ function Section2() {
   }, []);
 
   const [startIndex, setStartIndex] = useState(0);
-  const itemsToShow = isMobile ? 1 : 6;
+  const itemsToShow = isMobile ? 2 : 6;
   const totalSlides = Math.ceil(cats.length / itemsToShow);
   const [direction, setDirection] = useState("right");
 
@@ -83,25 +83,25 @@ function Section2() {
           </button>
 
           {/* Categories container */}
-          <div className="flex gap-10">
+          <div className="flex gap-6 md:gap-10">
             {cats.slice(startIndex, startIndex + itemsToShow).map((cat) => (
               <div
                 key={cat.id}
-                className={`flex flex-col items-center text-center min-w-[150px] 
+                className={`flex flex-col items-center text-center min-w-[100px] md:min-w-[150px] 
               ${
                 direction === "right"
                   ? "animate-sliderLeft"
                   : "animate-sliderRight"
               }`}
               >
-                <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full bg-mainColor transition-all duration-300 overflow-hidden  hover:shadow-custom">
+                <div className="w-[100px] h-[100px]  md:w-[150px] md:h-[150px] flex items-center justify-center rounded-full bg-mainColor transition-all duration-300 overflow-hidden  hover:shadow-custom">
                   <Image
                     src={cat.src}
                     alt={cat.label}
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-[75%] h-[75%] object-contain hover:scale-110 transition-all duration-300 cursor-pointer"
+                    className=" w-[70%] h-[70%] md:w-[75%] md:h-[75%] object-contain hover:scale-110 transition-all duration-300 cursor-pointer"
                   />
                 </div>
                 <p className="mt-3 text-xl font-medium">{cat.label}</p>
