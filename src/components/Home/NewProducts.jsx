@@ -221,21 +221,21 @@ function Section7() {
                     <ShoppingCart size={20} />
                   </button>
                 ) : (
-                  <div className="flex  justify-center items-center h-[36px] w-[80%] md:w-[127px] mt-2 gap-2 bg-grayColor text-white  rounded-lg shadow-md px-3 ">
+                  <div className="flex  md:justify-center justify-evenly items-center h-[36px] w-[80%] md:w-[127px] mt-2 gap-2 bg-grayColor text-white  rounded-lg shadow-md px-3 ">
                     <button
                       onClick={() => dispatch(increaseQty(tool.id))}
-                      className="p-[2px] md:p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
+                      className="p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
                     >
-                      <Plus size={16} />
+                      <Plus size={isMobile ? 18 : 16} />
                     </button>
-                    <span className="text-sm font-bold w-6 numbers text-center text-mainColor">
+                    <span className="text-base md:text-sm font-bold w-6 numbers text-center text-mainColor">
                       {itemInCart.quantity}
                     </span>
                     <button
                       onClick={() => dispatch(decreaseQty(tool.id))}
-                      className="p-[2px] md:p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
+                      className="p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
                     >
-                      <Minus size={16} />
+                      <Minus size={isMobile ? 18 : 16} />
                     </button>
                   </div>
                 )}
