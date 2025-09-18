@@ -227,26 +227,26 @@ function SectionDiscounts() {
                   {!itemInCart ? (
                     <button
                       onClick={() => dispatch(addToCart(tool))}
-                      className=" hover:scale-110 w-fit place-self-start  md:place-self-auto bg-mainColor text-white p-2 md:p-3 rounded-full shadow-md hover:bg-redColor transition"
+                      className=" hover:scale-110  place-self-start  md:place-self-auto bg-mainColor flex justify-center items-center text-white w-[40px] h-[40px] md:h-[44px] md:w-[44px] rounded-full shadow-md hover:bg-redColor transition"
                     >
-                      <ShoppingCart size={isMobile ? 15 : 20} />
+                      <ShoppingCart size={20} />
                     </button>
                   ) : (
-                    <div className="flex  w-fit place-self-start  md:place-self-auto items-center h-[31px] md:h-[44px] gap-2 bg-mainColor text-white py-1 px-2 md:px-3 md:py-2 rounded-full shadow-md">
+                    <div className="flex  w-full md:w-fit h-[40px]  place-self-start  md:place-self-auto items-center justify-center md:justify-start md:h-[44px] gap-2 bg-mainColor text-white py-1 px-2 md:px-3 md:py-2 rounded-full shadow-md">
                       <button
                         onClick={() => dispatch(increaseQty(tool.id))}
                         className="p-[2px] md:p-1 hover:bg-grayColor hover:text-mainColor rounded-full transition"
                       >
-                        <Plus size={isMobile ? 14 : 16} />
+                        <Plus size={16} />
                       </button>
-                      <span className="text-xs md:text-sm font-bold w-6 text-center numbers">
+                      <span className="text-sm font-bold w-6 text-center numbers">
                         {itemInCart.quantity}
                       </span>
                       <button
                         onClick={() => dispatch(decreaseQty(tool.id))}
                         className="p-[2px] md:p-1 hover:bg-grayColor hover:text-mainColor rounded-full transition"
                       >
-                        <Minus size={isMobile ? 14 : 16} />
+                        <Minus size={16} />
                       </button>
                     </div>
                   )}

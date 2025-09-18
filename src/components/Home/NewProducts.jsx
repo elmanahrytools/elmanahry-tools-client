@@ -224,7 +224,7 @@ function Section7() {
                   <div className="flex  justify-center items-center h-[36px] w-[80%] md:w-[127px] mt-2 gap-2 bg-grayColor text-white  rounded-lg shadow-md px-3 ">
                     <button
                       onClick={() => dispatch(increaseQty(tool.id))}
-                      className="p-[2px] md:p-1 hover:bg-mainColor hover:text-grayColor text-mainColor  rounded-full transition"
+                      className="p-[2px] md:p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
                     >
                       <Plus size={16} />
                     </button>
@@ -233,7 +233,7 @@ function Section7() {
                     </span>
                     <button
                       onClick={() => dispatch(decreaseQty(tool.id))}
-                      className="p-[2px] md:p-1 hover:bg-mainColor hover:text-grayColor text-mainColor  rounded-full transition"
+                      className="p-[2px] md:p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
                     >
                       <Minus size={16} />
                     </button>
