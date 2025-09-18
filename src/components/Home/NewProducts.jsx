@@ -226,16 +226,16 @@ function Section7() {
                       onClick={() => dispatch(increaseQty(tool.id))}
                       className="p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
                     >
-                      <Plus size={isMobile ? 18 : 16} />
+                      <Plus size={18} />
                     </button>
-                    <span className="text-base md:text-sm font-bold w-6 numbers text-center text-mainColor">
+                    <span className="text-base font-bold w-6 numbers text-center text-mainColor">
                       {itemInCart.quantity}
                     </span>
                     <button
                       onClick={() => dispatch(decreaseQty(tool.id))}
                       className="p-1 bg-mainColor md:hover:bg-mainColor md:bg-grayColor   hover:text-grayColor text-grayColor md:text-mainColor  rounded-full transition"
                     >
-                      <Minus size={isMobile ? 18 : 16} />
+                      <Minus size={18} />
                     </button>
                   </div>
                 )}

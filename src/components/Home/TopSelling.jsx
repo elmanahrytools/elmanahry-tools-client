@@ -270,16 +270,16 @@ function Section4() {
                             onClick={() => dispatch(increaseQty(tool.id))}
                             className="p-1 hover:bg-grayColor hover:text-mainColor rounded-full transition"
                           >
-                            <Plus size={16} />
+                            <Plus size={18} />
                           </button>
-                          <span className="text-sm font-bold w-6 text-center numbers">
+                          <span className="text-base  font-bold w-6 text-center numbers">
                             {itemInCart.quantity}
                           </span>
                           <button
                             onClick={() => dispatch(decreaseQty(tool.id))}
                             className="p-1 hover:bg-grayColor hover:text-mainColor rounded-full transition"
                           >
-                            <Minus size={16} />
+                            <Minus size={18} />
                           </button>
                         </div>
                       )}
