@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.alexprogress.com
+Host: https://www.elmanahrytools.com
 
 # Sitemaps
-Sitemap: https://www.alexprogress.com/sitemap.xml
+Sitemap: https://www.elmanahrytools.com/sitemap.xml

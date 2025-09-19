@@ -1,13 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { tools } from "@/data/tools";
 import SearchBar from "@/components/SearchBar";
 import OffersCard from "@/components/ProductsCards/OffersCard";
 import usePagination from "@/hooks/usePagination";
+import Loading from "@/components/Loading";
 
-function Offers() {
+function OffersContent() {
   const cartItems = useSelector((state) => state.cart.items);
   const query = useSelector((state) => state.search.query);
 
@@ -26,7 +27,7 @@ function Offers() {
     <div className="flex flex-col max-w-7xl mx-auto md:px-4 px-2 my-10">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <SearchBar />
-        <div className="mb-4  self-start">
+        <div className="mb-4 self-start">
           <span className="text-mainColor text-base md:text-lg font-medium">
             منتجات {startIndex + 1} - {Math.min(endIndex, filteredTools.length)}{" "}
             من {filteredTools.length}
@@ -86,4 +87,10 @@ function Offers() {
   );
 }
 
-export default Offers;
+export default function Offers() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <OffersContent />
+    </Suspense>
+  );
+}
