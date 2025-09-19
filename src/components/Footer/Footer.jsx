@@ -5,6 +5,8 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaYoutube,
+  FaTiktok,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -22,14 +24,22 @@ const Footer = () => {
 
   const socials = [
     { icon: <FaFacebookF size={20} />, href: "https://facebook.com" },
-    { icon: <FaInstagram size={20} />, href: "https://instagram.com" },
+    {
+      icon: <FaInstagram size={20} />,
+      href: "https://www.instagram.com/elmanahrytools",
+    },
     { icon: <FaLinkedinIn size={20} />, href: "https://linkedin.com" },
     { icon: <FaYoutube size={20} />, href: "https://youtube.com" },
+    {
+      icon: <FaTiktok size={20} />,
+      href: "https://tiktok.com/@elmanahry.tools",
+    },
+    { icon: <FaWhatsapp size={20} />, href: "https://whatsapp.com" },
   ];
 
   return (
     <footer className="bg-mainColor w-full pt-10 pb-4  flex justify-center items-center flex-col text-grayColor">
-      <div className="w-full max-w-7xl md:px-4 px-2  grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="w-full max-w-7xl md:px-4 px-2  flex flex-col md:flex-row justify-between items-c gap-10">
         {/* Logo */}
         <div className="flex flex-col items-center md:items-start gap-4">
           <Image
@@ -82,7 +92,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-lg font-bold text-yellowColor">تابعنا</h3>
-          <div className="flex gap-3">
+          <div className="flex items-center justify-center gap-3 flex-wrap">
             {socials.map((s, i) => (
               <Link
                 key={i}

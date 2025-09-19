@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const links = [
-  { title: "المنتجات", href: "/" },
+  { title: "الخصومات", href: "/offers" },
   {
     title: "العلامات التجارية",
     href: "#",

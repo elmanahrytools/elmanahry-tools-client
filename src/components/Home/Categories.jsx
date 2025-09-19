@@ -1,45 +1,42 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useInView } from "react-intersection-observer";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import Spinner from "@/components/Spinner";
+const cats = [
+  { id: 1, label: "معدات كهربائية", src: "/drill.png" },
+  { id: 2, label: "معدات يدوية", src: "/hammer.png" },
+  { id: 3, label: "مفاتيح ولقم", src: "/keys.png" },
+  { id: 4, label: "معدات قص وقطع", src: "/cut.png" },
+  { id: 5, label: "معدات سلامة", src: "/comp.png" },
+  { id: 6, label: "عدة سباكة", src: "/wrench.webp" },
+  { id: 7, label: "معدات دهان", src: "/airtools.webp" },
+  { id: 8, label: "معدات لحام", src: "/diamond.png" },
+  { id: 9, label: "كماشة", src: "/hammer.png" },
+  { id: 10, label: "مفك براغي", src: "/hammer.png" },
+  { id: 11, label: "شنيور بطارية", src: "/hammer.png" },
+  { id: 12, label: "مقص صاج", src: "/diamond.png" },
+  { id: 13, label: "مفتاح أنابيب", src: "/keys.png" },
+  { id: 14, label: "منشار يدوي", src: "/keys.png" },
+  { id: 15, label: "متر قياس", src: "/diamond.png" },
+  { id: 16, label: "معدات نجارة", src: "/keys.png" },
+  { id: 17, label: "معدات سباكة متقدمة", src: "/comp.png" },
+  { id: 18, label: "معدات حدادة", src: "/drill.png" },
+];
 
 function Section2() {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
-  const cats = [
-    { id: 1, label: "معدات كهربائية", src: "/drill.png" },
-    { id: 2, label: "معدات يدوية", src: "/hammer.png" },
-    { id: 3, label: "مفاتيح ولقم", src: "/keys.png" },
-    { id: 4, label: "معدات قص وقطع", src: "/cut.png" },
-    { id: 5, label: "معدات سلامة", src: "/comp.png" },
-    { id: 6, label: "عدة سباكة", src: "/wrench.webp" },
-    { id: 7, label: "معدات دهان", src: "/airtools.webp" },
-    { id: 8, label: "معدات لحام", src: "/diamond.png" },
-    { id: 9, label: "كماشة", src: "/hammer.png" },
-    { id: 10, label: "مفك براغي", src: "/hammer.png" },
-    { id: 11, label: "شنيور بطارية", src: "/hammer.png" },
-    { id: 12, label: "مقص صاج", src: "/diamond.png" },
-    { id: 13, label: "مفتاح أنابيب", src: "/keys.png" },
-    { id: 14, label: "منشار يدوي", src: "/keys.png" },
-    { id: 15, label: "متر قياس", src: "/diamond.png" },
-    { id: 16, label: "معدات نجارة", src: "/keys.png" },
-    { id: 17, label: "معدات سباكة متقدمة", src: "/comp.png" },
-    { id: 18, label: "معدات حدادة", src: "/drill.png" },
-  ];
-
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // set initial value
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const isMobile = useIsMobile();
   const [startIndex, setStartIndex] = useState(0);
   const itemsToShow = isMobile ? 2 : 6;
-  const totalSlides = Math.ceil(cats.length / itemsToShow);
+  const [loadedImages, setLoadedImages] = useState({});
   const [direction, setDirection] = useState("right");
-
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
+  };
+  const totalSlides = Math.ceil(cats.length / itemsToShow);
   const handleNext = () => {
     setDirection("right");
     if (startIndex < cats.length - itemsToShow) {
@@ -74,8 +71,6 @@ function Section2() {
         >
           {/* Arrow left */}
           <button
-            // style={{ marginLeft: isMobile ? "" : "" }}
-            // disabled={startIndex > 0 ? false : true}
             onClick={handlePrev}
             className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-yellowColor  hover:scale-110 transition-all duration-300 shadow-md rounded-full p-2  `}
           >
@@ -94,14 +89,20 @@ function Section2() {
                   : "animate-sliderRight"
               }`}
               >
-                <div className="w-[100px] h-[100px]  md:w-[150px] md:h-[150px] flex items-center justify-center rounded-full bg-mainColor transition-all duration-300 overflow-hidden  hover:shadow-custom">
+                <div className="relative w-[100px] h-[100px] md:w-[150px] md:h-[150px] flex items-center justify-center rounded-full bg-mainColor transition-all duration-300 overflow-hidden  hover:shadow-custom">
+                  {!loadedImages[cat.id] && (
+                    <Spinner size={isMobile ? 25 : 30} color="#e6e7e8" />
+                  )}
                   <Image
                     src={cat.src}
                     alt={cat.label}
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className=" w-[70%] h-[70%] md:w-[75%] md:h-[75%] object-contain hover:scale-110 transition-all duration-300 cursor-pointer"
+                    className={`absolute w-[70%] h-[70%] md:w-[75%] md:h-[75%] object-contain hover:scale-110 transition-all duration-300 cursor-pointer ${
+                      loadedImages[cat.id] ? "opacity-100" : "opacity-0"
+                    }`}
+                    onLoad={() => handleImageLoad(cat.id)}
                   />
                 </div>
                 <p className="mt-3 text-xl font-medium">{cat.label}</p>
@@ -111,8 +112,6 @@ function Section2() {
 
           {/* Arrow right */}
           <button
-            // style={{ marginRight: isMobile ? "0" : "" }}
-            // disabled={startIndex < cats.length - itemsToShow ? false : true}
             onClick={handleNext}
             className={`absolute right-0 top-1/2 -translate-y-1/2  bg-yellowColor  hover:scale-110 z-10 transition-all duration-300  shadow-md rounded-full p-2 `}
           >

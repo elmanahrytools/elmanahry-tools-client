@@ -13,7 +13,7 @@ const Section3 = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   const stats = [
     {
       number: 10,

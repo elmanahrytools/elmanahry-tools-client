@@ -11,7 +11,7 @@ const Section5 = () => {
     "/rubi.svg",
     "/izar.svg",
   ];
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   return (
     <div
       className={`mt-[80px] mb-[80px] max-w-7xl px-4 mx-auto ${

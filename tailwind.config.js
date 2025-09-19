@@ -23,6 +23,7 @@ module.exports = {
       },
       colors: {
         mainColor: "var(--mainColor)",
+        mainColorHover: "var(--mainColorHover)",
         yellowColor: "var(--yellowColor)",
         blackColor: "var(--blackColor)",
         textColor: "var(--textColor)",

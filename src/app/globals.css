@@ -25,6 +25,7 @@
 :root {
   /* --mainColor: hsl(209, 75%, 25%); */
   --mainColor: #104270;
+  --mainColorHover: #145088;
   --yellowColor: #ffc138;
   --blackColor: #414042;
   --textColor: #414042;

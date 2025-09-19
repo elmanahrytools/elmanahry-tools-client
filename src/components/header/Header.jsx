@@ -9,9 +9,9 @@ import { BsSearch } from "react-icons/bs";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { useSelector } from "react-redux";
 import CartSidebar from "../CartSidebar";
-
+import { useIsMobile } from "@/hooks/useIsMobile";
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -26,13 +26,6 @@ const Header = () => {
       return () => clearTimeout(timer);
     }
   }, [cartCount]);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-grayColor h-[70px] flex items-center">

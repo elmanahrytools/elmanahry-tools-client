@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 const links = [
-  { title: "المنتجات", href: "/" },
+  { title: "الخصومات", href: "/offers" },
   {
     title: "العلامات التجارية",
     href: "#",
@@ -54,7 +54,7 @@ function Navbar() {
           {link.dropdown && (
             <div
               dir="ltr"
-              className="absolute top-full  headerScrollbar  left-0 hidden group-hover:flex max-h-[500px] overflow-y-auto flex-col bg-grayColor shadow-lg  w-35 z-50 "
+              className="absolute top-full  headerScrollbar  left-0 hidden group-hover:flex max-h-[470px] overflow-y-auto flex-col bg-grayColor shadow-lg  w-44 z-50 "
             >
               {link.dropdown.map((sub) => (
                 <Link

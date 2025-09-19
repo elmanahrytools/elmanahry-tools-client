@@ -1,8 +1,14 @@
-const Spinner = ({ size = 32 }) => {
+const Spinner = ({ size = 30, color = "#104270" }) => {
   return (
     <div
-      style={{ width: `${size}px`, height: `${size}px` }}
-      className="border-[3px] border-t-secondColor border-r-secondColor border-transparent rounded-full animate-spinSlow"
+      style={{
+        width: `${size}px`,
+        height: `${size}px`,
+        border: "2px solid transparent",
+        borderTopColor: color,
+        borderRightColor: color,
+      }}
+      className="rounded-full animate-spinSlow"
     ></div>
   );
 };
