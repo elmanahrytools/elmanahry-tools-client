@@ -65,14 +65,14 @@ const CartSidebar = ({ onClose }) => {
                   key={item.id}
                   className="flex gap-2 justify-between flex-col mb-4 border-b border-[#bdbdbd6c] last:border-none pb-6"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white relative p-1 rounded-lg w-[50px] h-[50px] max-h-[50px] max-w-[50px] flex justify-center items-center">
+                  <div className="flex  gap-3">
+                    <div className="bg-white relative p-1 rounded-lg min-w-[50px] min-h-[50px] w-[50px] h-[50px] max-h-[50px] max-w-[50px] flex justify-center items-center">
                       <Image
                         src={item.img}
                         width={50}
                         height={50}
                         alt={item.name}
-                        className="object-contain max-h-full max-w-full"
+                        className="object-contain h-full w-full"
                       />
                     </div>
 
