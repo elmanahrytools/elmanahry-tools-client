@@ -161,11 +161,11 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 8px; /* Rounded corners for the thumb */
-  background-color: #ffc138; /* Thumb color */
+  background-color: #104270; /* Thumb color */
 }
-
+e6e7e8
 body::-webkit-scrollbar-track {
-  background: #104270; /* Background color of the track */
+  background: #e6e7e8; /* Background color of the track */
 }
 
 body {

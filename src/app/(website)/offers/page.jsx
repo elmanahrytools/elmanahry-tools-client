@@ -22,7 +22,7 @@ function OffersContent() {
 
   // Use pagination hook
   const { currentPage, totalPages, startIndex, endIndex, updatePage } =
-    usePagination(filteredTools.length, 8);
+    usePagination(filteredTools.length, 12);
 
   const paginatedTools = filteredTools.slice(startIndex, endIndex);
 

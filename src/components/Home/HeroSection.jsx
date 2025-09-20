@@ -31,12 +31,18 @@ const Section1 = () => {
             أفضل الأدوات اليدوية والكهربائية من أشهر العلامات التجارية
           </p>
           <div className="flex items-center mt-6 gap-4">
-            <button className="hover:scale-105 text-lg rounded-md bg-grayColor hover:bg-[#c9c9c9] transition-all duration-300 text-textColor font-bold px-4 py-2">
+            <Link
+              href={"/brands"}
+              className="hover:scale-105 text-lg rounded-md bg-grayColor hover:bg-[#c9c9c9] transition-all duration-300 text-textColor font-bold px-4 py-2"
+            >
               تصفح الماركات
-            </button>
-            <button className="hover:scale-105 text-lg rounded-md bg-yellowColor hover:bg-[#eead22] transition-all duration-300 text-textColor font-bold px-4 py-2">
+            </Link>
+            <Link
+              href={"/offers"}
+              className="hover:scale-105 text-lg rounded-md bg-yellowColor hover:bg-[#eead22] transition-all duration-300 text-textColor font-bold px-4 py-2"
+            >
               تسوق الآن
-            </button>
+            </Link>
           </div>
         </div>
 

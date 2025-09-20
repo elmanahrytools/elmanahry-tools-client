@@ -11,8 +11,8 @@ import {
 
 const Footer = () => {
   const importantLinks = [
-    { title: "المنتجات", href: "/" },
-    { title: "العلامات التجارية", href: "/" },
+    { title: "الخصومات", href: "/offers" },
+    { title: "العلامات التجارية", href: "/brands" },
     { title: "عن الشركة", href: "/about" },
   ];
 
@@ -28,8 +28,7 @@ const Footer = () => {
       icon: <FaInstagram size={20} />,
       href: "https://www.instagram.com/elmanahrytools",
     },
-    { icon: <FaLinkedinIn size={20} />, href: "https://linkedin.com" },
-    { icon: <FaYoutube size={20} />, href: "https://youtube.com" },
+
     {
       icon: <FaTiktok size={20} />,
       href: "https://tiktok.com/@elmanahry.tools",

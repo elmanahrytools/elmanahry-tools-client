@@ -55,10 +55,27 @@ const FilterBar = ({
     menu: (provided) => ({
       ...provided,
       borderRadius: "12px", // dropdown menu rounded
+      overflow: "hidden", // ensure first/last rounding shows
+    }),
+    menuList: (provided) => ({
+      ...provided,
+      padding: "0px", // adjust padding inside the dropdown
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      padding: "10px 12px",
+      backgroundColor: state.isFocused ? "#1042701f" : "white",
+      borderRadius:
+        state.isFocused && state.data.isFirst
+          ? "12px 12px 0 0"
+          : state.isFocused && state.data.isLast
+          ? "0 0 12px 12px"
+          : 0,
     }),
     multiValue: (provided) => ({
       ...provided,
       borderRadius: "12px", // pills rounded
+      backgroundColor: "#1042701f",
     }),
     multiValueLabel: (provided) => ({
       ...provided,
@@ -139,6 +156,15 @@ const FilterBar = ({
               styles={selectStyles}
             />
           )}
+          {/* Clear Filters Button */}
+          {(search || categories.length > 0 || brands.length > 0) && (
+            <button
+              onClick={() => dispatch(clearFilters())}
+              className="px-4 py-2 bg-redColor text-white rounded-xl hover:bg-red-600 transition"
+            >
+              مسح الفلاتر
+            </button>
+          )}
         </div>
       </div>
 
@@ -189,6 +215,15 @@ const FilterBar = ({
                 classNamePrefix="select"
                 styles={selectStyles}
               />
+            )}
+            {/* Clear Filters Button */}
+            {(search || categories.length > 0 || brands.length > 0) && (
+              <button
+                onClick={() => dispatch(clearFilters())}
+                className="mt-4 px-4 py-2 bg-redColor text-white rounded-xl hover:bg-red-600 transition"
+              >
+                مسح الفلاتر
+              </button>
             )}
           </div>
         </>

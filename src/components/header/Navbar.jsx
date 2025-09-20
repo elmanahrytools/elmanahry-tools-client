@@ -7,7 +7,7 @@ const links = [
   { title: "الخصومات", href: "/offers" },
   {
     title: "العلامات التجارية",
-    href: "#",
+    href: "/brands",
     dropdown: [
       { title: "APT", href: "/brands/apt" },
       { title: "Crown", href: "/brands/crown" },
@@ -45,7 +45,7 @@ function Navbar() {
         >
           <Link
             href={link.href}
-            className="text-[19px] font-bold hover:bg-[#4140421c] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300 "
+            className="text-[19px] font-bold hover:bg-[#1042701f] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300 "
           >
             {link.title}
           </Link>
@@ -60,7 +60,7 @@ function Navbar() {
                 <Link
                   key={sub.title}
                   href={sub.href}
-                  className="px-4 py-2 text-left text-base text-mainColor font-semibold hover:bg-mainColor hover:text-grayColor  transition"
+                  className="px-4 py-2 text-left text-base text-mainColor font-semibold hover:bg-[#1042701f] hover:text-mainColor  transition"
                 >
                   {sub.title}
                 </Link>

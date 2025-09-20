@@ -78,7 +78,7 @@ function Section7() {
                     </div>
                   </div>
                   <p className="text-md md:text-lg font-bold text-yellowColor  numbers">
-                    {tool.price}
+                    {tool.price} ج.م
                   </p>
                 </div>
 

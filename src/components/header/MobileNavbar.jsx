@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const links = [
@@ -48,18 +49,13 @@ function MobileNavbar({ onClose }) {
   }, []);
 
   return (
-    <div className="fixed animate-slideRightMobileMenu inset-0 z-50 bg-mainColor flex flex-col ">
-      {/* Top bar with close button */}
-      <div className="flex justify-between bg-mainColor h-[70px] items-center p-4 border-b border-gray-200 ">
+    <div className="fixed animate-slideRightMobileMenu inset-0 z-50 bg-mainColor flex flex-col">
+      {/* Top bar */}
+      <div className="flex justify-between bg-mainColor h-[70px] items-center p-4 border-b border-gray-200">
         <div className="flex items-center cursor-pointer">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={110}
-            height={50}
-            onClick={() => (window.location.href = "/")}
-            priority
-          />
+          <Link href="/">
+            <Image src="/logo.png" alt="Logo" width={110} height={50} priority />
+          </Link>
         </div>
         <button onClick={onClose} className="text-gray-700">
           <X
@@ -70,39 +66,40 @@ function MobileNavbar({ onClose }) {
       </div>
 
       {/* Menu Links */}
-      <div className="flex flex-col p-6 gap-4 overflow-y-auto  cartScrollbar">
+      <div className="flex flex-col p-6 gap-4 overflow-y-auto cartScrollbar">
         {links.map((link, i) => (
           <div key={i}>
-            {/* Link with dropdown toggle */}
-            <button
-              onClick={() =>
-                link.dropdown
-                  ? setOpenDropdown(openDropdown === i ? null : i)
-                  : onClose()
-              }
-              className="w-full flex justify-between items-center text-[20px] text-grayColor hover:text-yellowColor transition-colors duration-300"
-            >
-              <span>{link.title}</span>
-              {link.dropdown &&
-                (openDropdown === i ? (
-                  <ChevronUp size={20} />
-                ) : (
-                  <ChevronDown size={20} />
-                ))}
-            </button>
+            {/* Top-level link */}
+            {link.dropdown ? (
+              <button
+                onClick={() => setOpenDropdown(openDropdown === i ? null : i)}
+                className="w-full flex justify-between items-center text-[20px] text-grayColor hover:text-yellowColor transition-colors duration-300"
+              >
+                <span>{link.title}</span>
+                {openDropdown === i ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+              </button>
+            ) : (
+              <Link
+                href={link.href}
+                onClick={onClose}
+                className="w-full flex justify-between items-center text-[20px] text-grayColor hover:text-yellowColor transition-colors duration-300"
+              >
+                <span>{link.title}</span>
+              </Link>
+            )}
 
             {/* Dropdown items */}
             {link.dropdown && openDropdown === i && (
-              <div className="ml-4 mt-2 flex flex-col gap-2 ">
+              <div className="ml-4 mt-2 flex flex-col gap-2">
                 {link.dropdown.map((sub, j) => (
-                  <a
+                  <Link
                     key={j}
                     href={sub.href}
                     onClick={onClose}
                     className="text-[18px] text-gray-300 hover:text-yellowColor transition"
                   >
                     {sub.title}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
