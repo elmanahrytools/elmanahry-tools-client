@@ -154,6 +154,24 @@
   animation: fadeSlide 0.4s ease-in-out;
 }
 
+@keyframes fadeSlideDown {
+  from {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeSlide {
+  animation: fadeSlide 0.4s ease-in-out;
+}
+.animate-fadeSlideDown {
+  animation: fadeSlideDown 0.4s forwards;
+}
+
 body::-webkit-scrollbar {
   width: 4px; /* Set width of vertical scrollbar */
   height: 4px; /* Set height of horizontal scrollbar */

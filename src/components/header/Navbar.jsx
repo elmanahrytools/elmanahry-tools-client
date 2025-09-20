@@ -1,76 +1,152 @@
+// components/Navbar.jsx
 "use client";
 
 import React from "react";
 import Link from "next/link";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { categories } from "@/data/categories"; // your existing nested data
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
-const links = [
-  { title: "الخصومات", href: "/offers" },
-  {
-    title: "العلامات التجارية",
-    href: "/brands",
-    dropdown: [
-      { title: "APT", href: "/brands/apt" },
-      { title: "Crown", href: "/brands/crown" },
-      { title: "Dewalt", href: "/brands/dewalt" },
-      { title: "Ruby", href: "/brands/ruby" },
-      { title: "Bosch", href: "/brands/bosch" },
-      { title: "Makita", href: "/brands/makita" },
-      { title: "Black+Decker", href: "/brands/blackdecker" },
-      { title: "Stanley", href: "/brands/stanley" },
-      { title: "Hitachi", href: "/brands/hitachi" },
-      { title: "Milwaukee", href: "/brands/milwaukee" },
-      { title: "Metabo", href: "/brands/metabo" },
-      { title: "Einhell", href: "/brands/einhell" },
-      { title: "Hilti", href: "/brands/hilti" },
-      { title: "Festool", href: "/brands/festool" },
-      { title: "Ryobi", href: "/brands/ryobi" },
-      { title: "Skill", href: "/brands/skill" },
-      { title: "Ridgid", href: "/brands/ridgid" },
-      { title: "Karcher", href: "/brands/karcher" },
-      { title: "Wolf", href: "/brands/wolf" },
-      { title: "Chicago Electric", href: "/brands/chicago-electric" },
-    ],
-  },
-  { title: "تواصل معنا", href: "/contact" },
-  { title: "عن الشركة", href: "/about" },
+const BRANDS = [
+  "APT",
+  "Crown",
+  "Dewalt",
+  "Ruby",
+  "Bosch",
+  "Makita",
+  "Black+Decker",
+  "Stanley",
+  "Hitachi",
+  "Milwaukee",
+  "Metabo",
+  "Einhell",
+  "Hilti",
+  "Festool",
+  "Ryobi",
+  "Skill",
+  "Ridgid",
+  "Karcher",
+  "Wolf",
+  "Chicago Electric",
 ];
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav className="hidden md:flex gap-7 items-center relative">
-      {links.map((link) => (
-        <div
-          key={link.title}
-          className="relative group  h-[70px] flex items-center"
-        >
-          <Link
-            href={link.href}
-            className="text-[19px] font-bold hover:bg-[#1042701f] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300 "
-          >
-            {link.title}
-          </Link>
+      {/* Categories (multi-level, recursive) */}
+      <DropdownMenu.Root dir="rtl">
+        <DropdownMenu.Trigger className="text-[19px] font-bold px-3 py-2 rounded-xl text-mainColor hover:bg-[#1042701f]  focus:outline-none focus:ring-0 border-none">
+          التصنيفات
+        </DropdownMenu.Trigger>
 
-          {/* Dropdown */}
-          {link.dropdown && (
-            <div
-              dir="ltr"
-              className="absolute top-full  headerScrollbar  left-0 hidden group-hover:flex max-h-[470px] overflow-y-auto flex-col bg-grayColor shadow-lg  w-44 z-50 "
-            >
-              {link.dropdown.map((sub) => (
+        <DropdownMenu.Content
+          side="bottom"
+          sideOffset={20}
+          align="center"
+          className="min-w-[220px] bg-grayColor rounded-md shadow-md  z-50"
+        >
+          <div className="max-h-[420px] overflow-y-auto headerScrollbar">
+            {categories.map((cat) => renderCategory(cat))}
+          </div>
+        </DropdownMenu.Content>
+      </DropdownMenu.Root>
+      <Link
+        href="/offers"
+        className="text-[19px] font-bold hover:bg-[#1042701f] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
+      >
+        الخصومات
+      </Link>
+
+      {/* Brands dropdown */}
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger className="text-[19px] font-bold px-3 py-2 rounded-xl text-mainColor hover:bg-[#1042701f] focus:outline-none focus:ring-0 border-none">
+          العلامات التجارية
+        </DropdownMenu.Trigger>
+
+        <DropdownMenu.Content
+          side="bottom"
+          sideOffset={20}
+          align="center"
+          className="min-w-[180px] bg-grayColor rounded-md shadow-md py-1 z-50 "
+        >
+          <div className="max-h-64 overflow-y-auto headerScrollbar">
+            {BRANDS.map((brand) => (
+              <DropdownMenu.Item asChild key={brand}>
                 <Link
-                  key={sub.title}
-                  href={sub.href}
-                  className="px-4 py-2 text-left text-base text-mainColor font-semibold hover:bg-[#1042701f] hover:text-mainColor  transition"
+                  href={`/brands/${brand
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/\+/g, "")}`}
+                  className="block px-4 py-2 text-sm text-left whitespace-nowrap hover:bg-[#1042701f] focus:outline-none focus:ring-0 border-none"
                 >
-                  {sub.title}
+                  {brand}
                 </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+              </DropdownMenu.Item>
+            ))}
+          </div>
+        </DropdownMenu.Content>
+      </DropdownMenu.Root>
+
+      <Link
+        href="/contact"
+        className="text-[19px] font-bold hover:bg-[#1042701f] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
+      >
+        تواصل معنا
+      </Link>
+
+      <Link
+        href="/about"
+        className="text-[19px] font-bold hover:bg-[#1042701f] px-3 py-2 rounded-xl text-mainColor transition-colors duration-300"
+      >
+        عن الشركة
+      </Link>
     </nav>
   );
 }
 
-export default Navbar;
+/** Recursive render function for categories */
+function renderCategory(cat) {
+  if (cat.children && cat.children.length > 0) {
+    return (
+      <DropdownMenu.Sub key={cat.id}>
+        {/* SubTrigger displayed as a full-width button (rtl-friendly) */}
+        <DropdownMenu.SubTrigger asChild>
+          <button
+            className="w-full flex items-center justify-between px-4 py-2 text-sm text-right
+                       hover:bg-[#1042701f] 
+                       focus:outline-none focus:ring-0 border-none bg-transparent"
+          >
+            <span>{cat.name}</span>
+            <ChevronLeft size={14} className="ml-2" />
+
+            {/* simple caret */}
+          </button>
+        </DropdownMenu.SubTrigger>
+
+        {/* Submenu opens to the left for RTL layout */}
+        <DropdownMenu.SubContent
+          side="left"
+          align="end"
+          sideOffset={0}
+          className="min-w-[180px] bg-grayColor rounded-md shadow-md "
+        >
+          {cat.children.map((child) => renderCategory(child))}
+        </DropdownMenu.SubContent>
+      </DropdownMenu.Sub>
+    );
+  }
+
+  // leaf node -> link item
+  return (
+    <DropdownMenu.Item asChild key={cat.id}>
+      <Link
+        href={cat.href}
+        className="block px-4 py-2 text-sm text-right
+                   hover:bg-[#1042701f] 
+                   focus:outline-none focus:ring-0 border-none bg-transparent"
+      >
+        {cat.name}
+      </Link>
+    </DropdownMenu.Item>
+  );
+}

@@ -58,7 +58,9 @@ const CartSidebar = ({ onClose }) => {
         <div className="flex-1 overflow-y-auto cartScrollbar px-2">
           <div className="mx-1">
             {cartItems.length === 0 ? (
-              <p className="text-grayColor">العربة فارغة</p>
+              <div className="flex justify-center items-center ">
+                <p className="text-grayColor">العربة فارغة</p>
+              </div>
             ) : (
               cartItems.map((item) => (
                 <div
@@ -77,7 +79,7 @@ const CartSidebar = ({ onClose }) => {
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-grayColor text-xl flex flex-wrap">
+                      <h3 className="text-grayColor text-base md:text-xl flex flex-wrap">
                         {item.name}
                       </h3>
                       <p className="text-md text-grayColor">
@@ -122,36 +124,42 @@ const CartSidebar = ({ onClose }) => {
             )}
           </div>
         </div>
+        {cartItems.length !== 0 && (
+          <>
+            {" "}
+            {/* Footer */}
+            <div className="mt-2 flex flex-col gap-1">
+              <div className="flex flex-col">
+                <p className="text-grayColor font-bold text-lg">
+                  {" "}
+                  إجمالي القطع:{" "}
+                  <span className="text-yellowColor">{totalQuantity}</span>
+                </p>
+                <p className="text-grayColor font-bold text-lg">
+                  {" "}
+                  إجمالي عدد الأصناف:{" "}
+                  <span className="text-yellowColor">
+                    {cartItems.length}
+                  </span>{" "}
+                </p>
+              </div>
+              <div className="flex font-bold items-center justify-between mt-2 text-xl">
+                <span className="text-grayColor">الإجمالي: </span>
+                <span
+                  className={`transition-all duration-300 text-yellowColor text-xl ${
+                    animate ? "scale-125" : "scale-100"
+                  }`}
+                >
+                  {total} ج.م
+                </span>
+              </div>
 
-        {/* Footer */}
-        <div className="mt-2 flex flex-col gap-1">
-          <div className="flex flex-col">
-            <p className="text-grayColor font-bold text-lg">
-              {" "}
-              إجمالي القطع:{" "}
-              <span className="text-yellowColor">{totalQuantity}</span>
-            </p>
-            <p className="text-grayColor font-bold text-lg">
-              {" "}
-              إجمالي عدد الأصناف:{" "}
-              <span className="text-yellowColor">{cartItems.length}</span>{" "}
-            </p>
-          </div>
-          <div className="flex font-bold items-center justify-between mt-2 text-xl">
-            <span className="text-grayColor">الإجمالي: </span>
-            <span
-              className={`transition-all duration-300 text-yellowColor text-xl ${
-                animate ? "scale-125" : "scale-100"
-              }`}
-            >
-              {total} ج.م
-            </span>
-          </div>
-
-          {/* <button className="w-full bg-mainColor text-white py-2 rounded-lg hover:opacity-90 transition">
+              {/* <button className="w-full bg-mainColor text-white py-2 rounded-lg hover:opacity-90 transition">
             إتمام الشراء
           </button> */}
-        </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

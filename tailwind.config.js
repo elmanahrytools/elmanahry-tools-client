@@ -110,6 +110,7 @@ module.exports = {
             opacity: "1",
           },
         },
+        
       },
       animation: {
         rotate12: "rotate12 2s infinite ease-in-out",
