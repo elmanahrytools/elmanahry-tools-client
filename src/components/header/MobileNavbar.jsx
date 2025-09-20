@@ -116,7 +116,7 @@ function MobileNavbar({ onClose }) {
                 openDropdown === "categories" ? null : "categories"
               )
             }
-            className="w-full flex justify-between items-center text-[20px] text-grayColor hover:text-yellowColor transition"
+            className="w-full flex justify-between items-center text-[20px] text-grayColor  transition"
           >
             <span>التصنيفات</span>
             {openDropdown === "categories" ? (
@@ -148,7 +148,7 @@ function MobileNavbar({ onClose }) {
             )}
           </button>
           {openDropdown === "brands" && (
-            <div className="ml-4 mt-2 flex flex-col gap-2 max-h-60 overflow-y-auto cartScrollbar">
+            <div className="ml-4 mt-2 flex flex-col gap-2 max-h-64 overflow-y-auto cartScrollbar">
               {BRANDS.map((brand) => (
                 <Link
                   key={brand}
@@ -157,7 +157,7 @@ function MobileNavbar({ onClose }) {
                     .replace(/\s+/g, "-")
                     .replace(/\+/g, "")}`}
                   onClick={onClose}
-                  className="text-[18px] text-gray-300 hover:text-yellowColor transition"
+                  className="text-[18px] text-left text-mainColor py-1 px-2  bg-grayColor rounded-lg w-[160px] transition"
                 >
                   {brand}
                 </Link>
