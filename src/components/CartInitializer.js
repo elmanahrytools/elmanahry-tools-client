@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCart } from "@/store/cartSlice";
-import { setSearch } from "@/store/searchSlice";
+import { setSearch, setCategories, setBrands } from "@/store/filterSlice";
 
 export default function Initializer({ children }) {
   const dispatch = useDispatch();
@@ -14,10 +14,14 @@ export default function Initializer({ children }) {
       dispatch(setCart(JSON.parse(savedCart)));
     }
 
-    // 🔍 استرجاع السيرش
-    const savedSearch = localStorage.getItem("search");
-    if (savedSearch) {
-      dispatch(setSearch(JSON.parse(savedSearch)));
+    // 🔍 استرجاع الفلاتر (search + categories + brands)
+    const savedFilters = localStorage.getItem("filters");
+    if (savedFilters) {
+      const { search, categories, brands } = JSON.parse(savedFilters);
+
+      if (search) dispatch(setSearch(search));
+      if (categories) dispatch(setCategories(categories));
+      if (brands) dispatch(setBrands(brands));
     }
   }, [dispatch]);
 
