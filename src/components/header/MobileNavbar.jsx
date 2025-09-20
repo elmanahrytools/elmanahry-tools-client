@@ -148,7 +148,7 @@ function MobileNavbar({ onClose }) {
             )}
           </button>
           {openDropdown === "brands" && (
-            <div className="ml-4 mt-2 flex flex-col gap-2 max-h-64 overflow-y-auto cartScrollbar">
+            <div className="ml-4 mt-2 flex flex-col gap-2 max-h-64 overflow-y-auto cartScrollbar animate-fadeSlideDown">
               {BRANDS.map((brand) => (
                 <Link
                   key={brand}

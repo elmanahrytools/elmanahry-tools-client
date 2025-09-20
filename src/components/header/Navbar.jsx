@@ -43,7 +43,7 @@ export default function Navbar() {
           side="bottom"
           sideOffset={20}
           align="center"
-          className="min-w-[220px] bg-grayColor rounded-md shadow-md  z-50"
+          className="min-w-[220px] bg-grayColor rounded-md shadow-md animate-fadeSlideDown z-50 text-mainColor font-bold"
         >
           <div className="max-h-[420px] overflow-y-auto headerScrollbar">
             {categories.map((cat) => renderCategory(cat))}
@@ -67,9 +67,9 @@ export default function Navbar() {
           side="bottom"
           sideOffset={20}
           align="center"
-          className="min-w-[180px] bg-grayColor rounded-md shadow-md py-1 z-50 "
+          className="min-w-[180px] bg-grayColor rounded-md shadow-md py-1 z-50 animate-fadeSlideDown"
         >
-          <div className="max-h-64 overflow-y-auto headerScrollbar">
+          <div className="max-h-64 overflow-y-auto headerScrollbar ">
             {BRANDS.map((brand) => (
               <DropdownMenu.Item asChild key={brand}>
                 <Link
@@ -77,7 +77,7 @@ export default function Navbar() {
                     .toLowerCase()
                     .replace(/\s+/g, "-")
                     .replace(/\+/g, "")}`}
-                  className="block px-4 py-2 text-sm text-left whitespace-nowrap hover:bg-[#1042701f] focus:outline-none focus:ring-0 border-none"
+                  className="block px-4 py-2 text-sm text-left whitespace-nowrap text-mainColor font-bold hover:bg-[#1042701f] focus:outline-none focus:ring-0 border-none"
                 >
                   {brand}
                 </Link>
@@ -128,7 +128,7 @@ function renderCategory(cat) {
           side="left"
           align="end"
           sideOffset={0}
-          className="min-w-[180px] bg-grayColor rounded-md shadow-md "
+          className="min-w-[180px] bg-grayColor rounded-md shadow-md animate-fadeSlideDown"
         >
           {cat.children.map((child) => renderCategory(child))}
         </DropdownMenu.SubContent>
